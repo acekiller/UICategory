@@ -15,6 +15,12 @@
 		3C9F04D21CE05385004F7B4D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C9F04D01CE05385004F7B4D /* LaunchScreen.storyboard */; };
 		3C9F04DD1CE05385004F7B4D /* UICategoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F04DC1CE05385004F7B4D /* UICategoryTests.m */; };
 		3C9F04E81CE05385004F7B4D /* UICategoryUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F04E71CE05385004F7B4D /* UICategoryUITests.m */; };
+		3C9F04FD1CE0691F004F7B4D /* UILabel+ContentEdgetInsets.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F04FC1CE0691F004F7B4D /* UILabel+ContentEdgetInsets.m */; };
+		3C9F04FE1CE0691F004F7B4D /* UILabel+ContentEdgetInsets.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F04FC1CE0691F004F7B4D /* UILabel+ContentEdgetInsets.m */; };
+		3C9F04FF1CE0691F004F7B4D /* UILabel+ContentEdgetInsets.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F04FC1CE0691F004F7B4D /* UILabel+ContentEdgetInsets.m */; };
+		3C9F05021CE069A1004F7B4D /* Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F05011CE069A1004F7B4D /* Swizzling.m */; };
+		3C9F05031CE069A1004F7B4D /* Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F05011CE069A1004F7B4D /* Swizzling.m */; };
+		3C9F05041CE069A1004F7B4D /* Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F05011CE069A1004F7B4D /* Swizzling.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +57,10 @@
 		3C9F04E31CE05385004F7B4D /* UICategoryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UICategoryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C9F04E71CE05385004F7B4D /* UICategoryUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UICategoryUITests.m; sourceTree = "<group>"; };
 		3C9F04E91CE05385004F7B4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C9F04FB1CE0691F004F7B4D /* UILabel+ContentEdgetInsets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+ContentEdgetInsets.h"; sourceTree = "<group>"; };
+		3C9F04FC1CE0691F004F7B4D /* UILabel+ContentEdgetInsets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+ContentEdgetInsets.m"; sourceTree = "<group>"; };
+		3C9F05001CE069A1004F7B4D /* Swizzling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Swizzling.h; sourceTree = "<group>"; };
+		3C9F05011CE069A1004F7B4D /* Swizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Swizzling.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +111,7 @@
 		3C9F04C11CE05385004F7B4D /* UICategory */ = {
 			isa = PBXGroup;
 			children = (
+				3C9F04F51CE05B2D004F7B4D /* UICategory */,
 				3C9F04C51CE05385004F7B4D /* AppDelegate.h */,
 				3C9F04C61CE05385004F7B4D /* AppDelegate.m */,
 				3C9F04C81CE05385004F7B4D /* ViewController.h */,
@@ -138,6 +149,17 @@
 				3C9F04E91CE05385004F7B4D /* Info.plist */,
 			);
 			path = UICategoryUITests;
+			sourceTree = "<group>";
+		};
+		3C9F04F51CE05B2D004F7B4D /* UICategory */ = {
+			isa = PBXGroup;
+			children = (
+				3C9F04FB1CE0691F004F7B4D /* UILabel+ContentEdgetInsets.h */,
+				3C9F04FC1CE0691F004F7B4D /* UILabel+ContentEdgetInsets.m */,
+				3C9F05001CE069A1004F7B4D /* Swizzling.h */,
+				3C9F05011CE069A1004F7B4D /* Swizzling.m */,
+			);
+			path = UICategory;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,6 +292,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C9F04FD1CE0691F004F7B4D /* UILabel+ContentEdgetInsets.m in Sources */,
+				3C9F05021CE069A1004F7B4D /* Swizzling.m in Sources */,
 				3C9F04CA1CE05385004F7B4D /* ViewController.m in Sources */,
 				3C9F04C71CE05385004F7B4D /* AppDelegate.m in Sources */,
 				3C9F04C41CE05385004F7B4D /* main.m in Sources */,
@@ -281,6 +305,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C9F04DD1CE05385004F7B4D /* UICategoryTests.m in Sources */,
+				3C9F04FE1CE0691F004F7B4D /* UILabel+ContentEdgetInsets.m in Sources */,
+				3C9F05031CE069A1004F7B4D /* Swizzling.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +315,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C9F04E81CE05385004F7B4D /* UICategoryUITests.m in Sources */,
+				3C9F04FF1CE0691F004F7B4D /* UILabel+ContentEdgetInsets.m in Sources */,
+				3C9F05041CE069A1004F7B4D /* Swizzling.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,7 +391,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -400,7 +428,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -411,7 +439,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				INFOPLIST_FILE = UICategory/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.goappbox.UICategory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -422,7 +452,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				INFOPLIST_FILE = UICategory/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.goappbox.UICategory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -496,6 +528,7 @@
 				3C9F04EE1CE05385004F7B4D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3C9F04EF1CE05385004F7B4D /* Build configuration list for PBXNativeTarget "UICategoryTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +537,7 @@
 				3C9F04F11CE05385004F7B4D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3C9F04F21CE05385004F7B4D /* Build configuration list for PBXNativeTarget "UICategoryUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +546,7 @@
 				3C9F04F41CE05385004F7B4D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
