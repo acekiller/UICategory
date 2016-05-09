@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import "UILabel+ContentEdgetInsets.h"
 
+#import "YMRichTextView.h"
+
 @interface ViewController ()
 
 @end
@@ -18,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [self testRichTextLabel];
+    [self testRichTextView];
     
 }
 
@@ -39,6 +41,15 @@
     t.text = @"debug时打出的backtrace，其中掺杂着被swizzle的方法名，一团糟啊！上面介绍的swizzle方案，使backtrace中打印出的方法名还是很清晰的。但仍然很难去debug，因为很难记住swizzling影响过什么。给你的代码写好文档（即使只有你一个人会看到）。养成一个好习惯，不会比调试多线程问题还难的。";
     t.textContentEdgeInsets = UIEdgeInsetsMake(ediSize, ediSize, ediSize, ediSize);
     [t sizeToFit];
+}
+
+- (void) testRichTextView
+{
+    YMRichTextView *rt = [[YMRichTextView alloc] initWithFrame:CGRectMake(10.f, 100.f, 300.f, 400.f)];
+    rt.backgroundColor = [UIColor redColor];
+    rt.text = @"学习";
+    [rt addImage:[UIImage imageNamed:@"service_head"]];
+    [self.view addSubview:rt];
 }
 
 @end

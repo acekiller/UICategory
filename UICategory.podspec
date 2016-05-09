@@ -93,7 +93,7 @@ Pod::Spec.new do |s|
   s.source_files  = "UICategory", "UICategory/UICategory/**/*.{h,m}"
   s.exclude_files = "Classes/Exclude"
 
-  # s.public_header_files = "UICategory/UICategory/**/*.h"
+  s.public_header_files = "UICategory/UICategory/**/*.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
