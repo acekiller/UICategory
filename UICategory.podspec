@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
   # s.watchos.deployment_target = "2.0"
   # s.tvos.deployment_target = "9.0"
 
-  s.source       = { :git => "https://github.com/acekiller/UICategory.git", :commit => "1b6836a38219137db55d8d571d8f35c8475d953c" }
+  s.source       = { :git => "https://github.com/acekiller/UICategory.git", :tag => 0.0.1 }
 
   s.source_files  = "UICategory", "UICategory/UICategory/**/*.{h,m}"
   s.exclude_files = "Classes/Exclude"
@@ -51,7 +51,7 @@ Pod::Spec.new do |s|
   #
 
   # s.framework  = "SomeFramework"
-  # s.frameworks = "SomeFramework", "AnotherFramework"
+  s.frameworks = "UIKit", "Foundation"
 
   # s.library   = "iconv"
   # s.libraries = "iconv", "xml2"
