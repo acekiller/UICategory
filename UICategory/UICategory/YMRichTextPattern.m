@@ -17,9 +17,14 @@
 
 #pragma mark --Attribute Metthod
 
-- (NSDictionary *)attributedParams
+- (NSDictionary *) showStringattributedParams:(YMPatternResults *)result
 {
     return @{};
+}
+
+- (NSString *) showString:(YMPatternResults *)result
+{
+    return @"测试";
 }
 
 #pragma mark --Attachement Method

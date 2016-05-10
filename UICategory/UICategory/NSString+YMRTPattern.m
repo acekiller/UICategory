@@ -69,6 +69,11 @@ static NSMutableArray *patternModels;
             if ([pattern patternType] == YMRichPatternWithAttachement) {
                 [attr replaceCharactersInRange:[result range] withString:@""];
                 [attr insertAttributedString:[NSAttributedString attributedStringWithAttachment:[pattern attachementWithPattenResult:result]] atIndex:result.range.location];
+            } else {
+                NSString *showString = [pattern showString:result];
+                NSDictionary *attributs = [pattern showStringattributedParams:result];
+                [attr replaceCharactersInRange:[result range] withString:showString];
+                [attr addAttributes:attributs range:NSMakeRange(result.range.location, [showString length])];
             }
         }
     }

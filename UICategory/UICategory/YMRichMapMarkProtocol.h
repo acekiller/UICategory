@@ -19,7 +19,9 @@
 
 #pragma mark --Attribute Metthod
 
-- (NSDictionary *)attributedParams;
+- (NSDictionary *)showStringattributedParams:(YMPatternResults *)result;
+
+- (NSString *)showString:(YMPatternResults *)result;
 
 #pragma mark --Attachement Method
 - (Class)attachementClass;
