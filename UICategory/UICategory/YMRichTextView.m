@@ -26,6 +26,7 @@
     [attributedString insertAttributedString:attachementString atIndex:self.attributedText.length];
     
     self.attributedText = attributedString;
+    self.selectedRange = NSMakeRange(range.location + 1, 0);
 }
 
 - (void)insertAttachementToSelectedRangeWithPath:(NSString *)filepath
@@ -41,6 +42,7 @@
     [attributedString insertAttributedString:attachementString atIndex:self.attributedText.length];
     
     self.attributedText = attributedString;
+    self.selectedRange = NSMakeRange(self.selectedRange.location + 1, self.selectedRange.length);
 }
 
 - (void)addSeprateLine
@@ -53,8 +55,8 @@
     NSAttributedString *attachementString = [NSAttributedString attributedStringWithAttachment:attachement];
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];
     [attributedString insertAttributedString:attachementString atIndex:self.selectedRange.location];
-    
     self.attributedText = attributedString;
+    self.selectedRange = NSMakeRange(self.selectedRange.location + 1, self.selectedRange.length);
 }
 
 - (void)addImage:(UIImage *)image
@@ -64,6 +66,7 @@
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];
     [attributedString insertAttributedString:attachementString atIndex:self.attributedText.length];
     self.attributedText = attributedString;
+    self.selectedRange = NSMakeRange(self.selectedRange.location + 1, self.selectedRange.length);
 }
 
 @end

@@ -14,7 +14,7 @@
 {
     self = [super initWithData:[NSData dataWithContentsOfFile:filepath] ofType:nil];
     if (self) {
-        self.image = [UIImage imageNamed:@"service_head"];
+        self.image = [UIImage imageNamed:@"emoji_137"];
     }
     return self;
 }

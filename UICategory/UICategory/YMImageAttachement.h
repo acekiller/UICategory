@@ -6,7 +6,7 @@
 //  Copyright © 2016 goappbox. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "NSTextAttachment+YMRTPattern.h"
 
 @interface YMImageAttachement : NSTextAttachment
 

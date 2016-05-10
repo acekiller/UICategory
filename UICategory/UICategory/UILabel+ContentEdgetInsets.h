@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YMRichMapMarkProtocol.h"
 
 @interface UILabel (ContentEdgetInsets)
 
 @property (nonatomic, assign) UIEdgeInsets textContentEdgeInsets;
+
+@property (nonatomic, assign) CGFloat cornerRadius;
+
+- (void)addPattern:(id<YMRichMapMarkProtocol>)pattern;
 
 @end

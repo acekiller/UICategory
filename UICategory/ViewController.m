@@ -8,8 +8,8 @@
 
 #import "ViewController.h"
 #import "UILabel+ContentEdgetInsets.h"
-
 #import "YMRichTextView.h"
+#import "NSString+YMRTPattern.h"
 
 @interface ViewController ()
 
@@ -20,7 +20,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [self testRichTextView];
+    [self testRichTextLabel];
+    
+//    [self testRichTextView];
+    
+//    [self testRegular];
     
 }
 
@@ -38,7 +42,8 @@
     t.backgroundColor = [UIColor redColor];
     t.preferredMaxLayoutWidth = 300.f;
     CGFloat ediSize = 10.f;
-    t.text = @"debug时打出的backtrace，其中掺杂着被swizzle的方法名，一团糟啊！上面介绍的swizzle方案，使backtrace中打印出的方法名还是很清晰的。但仍然很难去debug，因为很难记住swizzling影响过什么。给你的代码写好文档（即使只有你一个人会看到）。养成一个好习惯，不会比调试多线程问题还难的。";
+    t.cornerRadius = 5.f;
+    t.text = @"测试[你好么],欢迎。[Hello],测试内容[Welcome],哈哈[笑脸],难啊。你猜猜，我猜猜，大家都不知道，这是怎么回事儿。那该咋办呢？3.2遗留：一个孩子的家长可以相互看到手机号。";
     t.textContentEdgeInsets = UIEdgeInsetsMake(ediSize, ediSize, ediSize, ediSize);
     [t sizeToFit];
 }
@@ -48,8 +53,15 @@
     YMRichTextView *rt = [[YMRichTextView alloc] initWithFrame:CGRectMake(10.f, 100.f, 300.f, 400.f)];
     rt.backgroundColor = [UIColor redColor];
     rt.text = @"学习";
-    [rt addImage:[UIImage imageNamed:@"service_head"]];
+    [rt addImage:[UIImage imageNamed:@"emoj_s_pressed"]];
     [self.view addSubview:rt];
+}
+
+- (void) testRegular
+{
+//    NSString *rexTestString = @"测试[你好么],欢迎。[Hello],测试内容[Welcome],哈哈[笑脸],难啊";
+//    NSArray *rexResults = [rexTestString patternResultWithPattern:@"(\\[[a-zA-Z0-9]{0,}[\u4E00-\u9FA5]{0,}\\])"];
+//    NSLog(@"%@",rexResults);
 }
 
 @end
