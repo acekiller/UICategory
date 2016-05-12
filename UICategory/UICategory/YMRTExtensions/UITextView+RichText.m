@@ -1,33 +1,16 @@
 //
-//  YMRichTextView.m
+//  UITextView+RichText.m
 //  UICategory
 //
-//  Created by fengxijun on 5/9/16.
+//  Created by fengxijun on 5/11/16.
 //  Copyright © 2016 goappbox. All rights reserved.
 //
 
-#import "YMRichTextView.h"
-#import <CoreText/CoreText.h>
+#import "UITextView+RichText.h"
 #import "YMImageAttachement.h"
 #import "YMOtherAttachement.h"
-//#import "Swizzling.h"
 
-@interface YMRichTextView ()
-@property (nonatomic, strong) NSMutableAttributedString *multAttributedString;
-@end
-
-@implementation YMRichTextView
-
-- (instancetype) initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        NSLog(@"layoutManager : %@",self.layoutManager);
-        NSLog(@"textContainer : %@",self.textContainer);
-        NSLog(@"textStorage.layoutManagers : %@",self.textStorage.layoutManagers);
-    }
-    return self;
-}
+@implementation UITextView (RichText)
 
 - (void)insertAttachementWithPath:(NSString *)filepath range:(NSRange)range
 {
@@ -79,5 +62,6 @@
     self.attributedText = attributedString;
     self.selectedRange = NSMakeRange(self.selectedRange.location + 1, self.selectedRange.length);
 }
+
 
 @end

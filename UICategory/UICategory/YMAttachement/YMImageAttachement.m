@@ -26,7 +26,8 @@
 
 - (void)setPatternResult:(YMPatternResults *)result
 {
-    self.image = [UIImage imageNamed:@"emoji_102"];
+    NSLog(@"%@",result.result);
+//    self.image = [UIImage imageNamed:@"emoji_102"];
 }
 
 //- (UIImage *)imageForBounds:(CGRect)imageBounds textContainer:(NSTextContainer *)textContainer characterIndex:(NSUInteger)charIndex

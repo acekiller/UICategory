@@ -9,7 +9,6 @@
 #import "UILabel+ContentEdgetInsets.h"
 #import "Swizzling.h"
 #import "NSString+YMRTPattern.h"
-#import "YMEmojPattern.h"
 
 @implementation UILabel (ContentEdgetInsets)
 
@@ -35,17 +34,6 @@
 - (UIEdgeInsets)textContentEdgeInsets
 {
     return UIEdgeInsetsFromString(objc_getAssociatedObject(self, "textContentEdgeInsets"));
-}
-
-- (void) setCornerRadius:(CGFloat)cornerRadius
-{
-    self.layer.masksToBounds = YES;
-    self.layer.cornerRadius = cornerRadius;
-}
-
-- (CGFloat) cornerRadius
-{
-    return self.layer.cornerRadius;
 }
 
 #pragma mark --Draw Methods
@@ -77,8 +65,7 @@
 
 - (NSMutableAttributedString *)getAttributeWithString
 {
-    YMEmojPattern *pattern = [[YMEmojPattern alloc] init];
-    return [self.text mutableAttributedStringWithPattens:@[pattern]];
+    return [self.text mutableAttributedStringWithPattens:[self patterns]];
 }
 
 - (void)addPattern:(id<YMRichMapMarkProtocol>)pattern

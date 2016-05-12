@@ -7,28 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIImage.h>
-#import "YMPatternResults.h"
-#import "YMRTHead.h"
+#import <UIKit/NSTextAttachment.h>
+@protocol YMRichMapMarkProtocol;
 
 @interface YMPatternResults : NSObject
-@property (nonatomic, assign) NSRange range;
-@property (nonatomic, strong) NSString *result;
-@property (nonatomic, strong) NSDictionary *params;
-@end
 
-//@interface YMAttributedPatternResults : YMPatternResults
-//@property (nonatomic, strong) NSString *showText;
-//@property (nonatomic, strong) NSString *tapUseText;
-//@end
-//
-//@interface YMAttachementPatternResults : YMPatternResults
-//@property (nonatomic, strong) UIImage *image;
-//@property (nonatomic, strong) NSString *filepath;
-//@property (nonatomic, strong) NSString *url;
-//@property (nonatomic, strong, readonly) UIImage *showIcon;
-//@property (nonatomic, strong) Class attachementClazzName;
-//
-//- (void)setIcon:(UIImage *)icon;
-//
-//@end
+- (instancetype) initWithString:string checkResult:(NSTextCheckingResult *)checkResult pattern:(id<YMRichMapMarkProtocol>)pattern;
+
+@property (nonatomic, assign) NSRange range;
+
+@property (nonatomic, strong) NSString *result;
+
+@property (nonatomic, strong) NSDictionary *params;
+
+@property (nonatomic, strong) NSString *formatUseName;
+
+@property (nonatomic, strong) NSAttributedString *attributeString;
+
+@end

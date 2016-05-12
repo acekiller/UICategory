@@ -17,14 +17,14 @@
 
 #pragma mark --Attribute Metthod
 
-- (NSDictionary *) showStringattributedParams:(YMPatternResults *)result
+- (NSDictionary *)styleParams:(NSString *)result
 {
     return @{};
 }
 
-- (NSString *) showString:(YMPatternResults *)result
+- (NSString *)showString:(NSString *)result
 {
-    return @"测试";
+    return @"";
 }
 
 #pragma mark --Attachement Method
@@ -34,11 +34,14 @@
     return [NSTextAttachment class];
 }
 
-- (NSTextAttachment *)attachementWithPattenResult:(YMPatternResults *)result
+- (Class)styleParamsParserClass
 {
-    NSTextAttachment *attachement = [[[self attachementClass] alloc] init];
-    [attachement setPatternResult:result];
-    return attachement;
+    return [NSAttributedString class];
+}
+
+- (NSString *)formatResourceAdjustString:(NSString *)result
+{
+    return @"";
 }
 
 @end

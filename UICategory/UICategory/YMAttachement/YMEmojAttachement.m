@@ -12,13 +12,8 @@
 
 - (void)setPatternResult:(YMPatternResults *)result
 {
-    self.image = [UIImage imageNamed:@"emoji_02"];
+    self.image = [UIImage imageNamed:result.formatUseName];
 }
-
-//- (UIImage *)imageForBounds:(CGRect)imageBounds textContainer:(NSTextContainer *)textContainer characterIndex:(NSUInteger)charIndex
-//{
-//    return [UIImage imageNamed:@"service_head"];
-//}
 
 - (CGRect)attachmentBoundsForTextContainer:(NSTextContainer *)textContainer proposedLineFragment:(CGRect)lineFrag glyphPosition:(CGPoint)position characterIndex:(NSUInteger)charIndex
 {

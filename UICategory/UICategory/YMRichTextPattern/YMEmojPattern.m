@@ -25,4 +25,12 @@
     return [YMEmojAttachement class];
 }
 
+- (NSString *)formatResourceAdjustString:(NSString *)result
+{
+    NSMutableString *emojName = [result mutableCopy];
+    [emojName replaceCharactersInRange:NSMakeRange(0, 1) withString:@""];
+    [emojName replaceCharactersInRange:NSMakeRange([emojName length] - 2, 1) withString:@""];
+    return emojName;
+}
+
 @end

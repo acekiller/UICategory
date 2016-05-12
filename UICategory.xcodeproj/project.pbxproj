@@ -7,28 +7,49 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3C76A3F31CE1818E0084DB90 /* YMEmojPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C76A3F21CE1818E0084DB90 /* YMEmojPattern.m */; };
-		3C76A3F41CE1818E0084DB90 /* YMEmojPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C76A3F21CE1818E0084DB90 /* YMEmojPattern.m */; };
-		3C76A3F51CE1818E0084DB90 /* YMEmojPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C76A3F21CE1818E0084DB90 /* YMEmojPattern.m */; };
+		3C20542A1CE33E80008693AA /* emoj_s_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C2054291CE33E80008693AA /* emoj_s_pressed@2x.png */; };
+		3C20542B1CE33E80008693AA /* emoj_s_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C2054291CE33E80008693AA /* emoj_s_pressed@2x.png */; };
+		3C20542C1CE33E80008693AA /* emoj_s_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C2054291CE33E80008693AA /* emoj_s_pressed@2x.png */; };
+		3C5F663F1CE487EB00BC4F98 /* YMEmojAttachement.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F66241CE487EB00BC4F98 /* YMEmojAttachement.m */; };
+		3C5F66401CE487EB00BC4F98 /* YMEmojAttachement.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F66241CE487EB00BC4F98 /* YMEmojAttachement.m */; };
+		3C5F66411CE487EB00BC4F98 /* YMEmojAttachement.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F66241CE487EB00BC4F98 /* YMEmojAttachement.m */; };
+		3C5F66421CE487EB00BC4F98 /* YMImageAttachement.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F66261CE487EB00BC4F98 /* YMImageAttachement.m */; };
+		3C5F66431CE487EB00BC4F98 /* YMImageAttachement.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F66261CE487EB00BC4F98 /* YMImageAttachement.m */; };
+		3C5F66441CE487EB00BC4F98 /* YMImageAttachement.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F66261CE487EB00BC4F98 /* YMImageAttachement.m */; };
+		3C5F66451CE487EB00BC4F98 /* YMOtherAttachement.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F66281CE487EB00BC4F98 /* YMOtherAttachement.m */; };
+		3C5F66461CE487EB00BC4F98 /* YMOtherAttachement.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F66281CE487EB00BC4F98 /* YMOtherAttachement.m */; };
+		3C5F66471CE487EB00BC4F98 /* YMOtherAttachement.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F66281CE487EB00BC4F98 /* YMOtherAttachement.m */; };
+		3C5F66481CE487EB00BC4F98 /* YMEmojPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F662B1CE487EB00BC4F98 /* YMEmojPattern.m */; };
+		3C5F66491CE487EB00BC4F98 /* YMEmojPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F662B1CE487EB00BC4F98 /* YMEmojPattern.m */; };
+		3C5F664A1CE487EB00BC4F98 /* YMEmojPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F662B1CE487EB00BC4F98 /* YMEmojPattern.m */; };
+		3C5F664B1CE487EB00BC4F98 /* YMImagePattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F662D1CE487EB00BC4F98 /* YMImagePattern.m */; };
+		3C5F664C1CE487EB00BC4F98 /* YMImagePattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F662D1CE487EB00BC4F98 /* YMImagePattern.m */; };
+		3C5F664D1CE487EB00BC4F98 /* YMImagePattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F662D1CE487EB00BC4F98 /* YMImagePattern.m */; };
+		3C5F664E1CE487EB00BC4F98 /* YMRichTextPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F66301CE487EB00BC4F98 /* YMRichTextPattern.m */; };
+		3C5F664F1CE487EB00BC4F98 /* YMRichTextPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F66301CE487EB00BC4F98 /* YMRichTextPattern.m */; };
+		3C5F66501CE487EB00BC4F98 /* YMRichTextPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F66301CE487EB00BC4F98 /* YMRichTextPattern.m */; };
+		3C5F66511CE487EB00BC4F98 /* NSRegularExpression+YMRTPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F66331CE487EB00BC4F98 /* NSRegularExpression+YMRTPattern.m */; };
+		3C5F66521CE487EB00BC4F98 /* NSRegularExpression+YMRTPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F66331CE487EB00BC4F98 /* NSRegularExpression+YMRTPattern.m */; };
+		3C5F66531CE487EB00BC4F98 /* NSRegularExpression+YMRTPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F66331CE487EB00BC4F98 /* NSRegularExpression+YMRTPattern.m */; };
+		3C5F66541CE487EB00BC4F98 /* NSString+YMRTPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F66351CE487EB00BC4F98 /* NSString+YMRTPattern.m */; };
+		3C5F66551CE487EB00BC4F98 /* NSString+YMRTPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F66351CE487EB00BC4F98 /* NSString+YMRTPattern.m */; };
+		3C5F66561CE487EB00BC4F98 /* NSString+YMRTPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F66351CE487EB00BC4F98 /* NSString+YMRTPattern.m */; };
+		3C5F66571CE487EB00BC4F98 /* NSTextAttachment+YMRTPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F66371CE487EB00BC4F98 /* NSTextAttachment+YMRTPattern.m */; };
+		3C5F66581CE487EB00BC4F98 /* NSTextAttachment+YMRTPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F66371CE487EB00BC4F98 /* NSTextAttachment+YMRTPattern.m */; };
+		3C5F66591CE487EB00BC4F98 /* NSTextAttachment+YMRTPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F66371CE487EB00BC4F98 /* NSTextAttachment+YMRTPattern.m */; };
+		3C5F665A1CE487EB00BC4F98 /* UILabel+ContentEdgetInsets.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F66391CE487EB00BC4F98 /* UILabel+ContentEdgetInsets.m */; };
+		3C5F665B1CE487EB00BC4F98 /* UILabel+ContentEdgetInsets.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F66391CE487EB00BC4F98 /* UILabel+ContentEdgetInsets.m */; };
+		3C5F665C1CE487EB00BC4F98 /* UILabel+ContentEdgetInsets.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F66391CE487EB00BC4F98 /* UILabel+ContentEdgetInsets.m */; };
+		3C5F665D1CE487EB00BC4F98 /* UITextView+RichText.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F663B1CE487EB00BC4F98 /* UITextView+RichText.m */; };
+		3C5F665E1CE487EB00BC4F98 /* UITextView+RichText.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F663B1CE487EB00BC4F98 /* UITextView+RichText.m */; };
+		3C5F665F1CE487EB00BC4F98 /* UITextView+RichText.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F663B1CE487EB00BC4F98 /* UITextView+RichText.m */; };
+		3C5F66601CE487EB00BC4F98 /* UIView+ContentEdgetInsets.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F663D1CE487EB00BC4F98 /* UIView+ContentEdgetInsets.m */; };
+		3C5F66611CE487EB00BC4F98 /* UIView+ContentEdgetInsets.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F663D1CE487EB00BC4F98 /* UIView+ContentEdgetInsets.m */; };
+		3C5F66621CE487EB00BC4F98 /* UIView+ContentEdgetInsets.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F663D1CE487EB00BC4F98 /* UIView+ContentEdgetInsets.m */; };
 		3C76A4071CE187120084DB90 /* YMPatternResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C76A4061CE187120084DB90 /* YMPatternResults.m */; };
 		3C76A4081CE187120084DB90 /* YMPatternResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C76A4061CE187120084DB90 /* YMPatternResults.m */; };
 		3C76A4091CE187120084DB90 /* YMPatternResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C76A4061CE187120084DB90 /* YMPatternResults.m */; };
-		3C76A40C1CE190B10084DB90 /* NSString+YMRTPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C76A40B1CE190B10084DB90 /* NSString+YMRTPattern.m */; };
-		3C76A40D1CE190B10084DB90 /* NSString+YMRTPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C76A40B1CE190B10084DB90 /* NSString+YMRTPattern.m */; };
-		3C76A40E1CE190B10084DB90 /* NSString+YMRTPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C76A40B1CE190B10084DB90 /* NSString+YMRTPattern.m */; };
-		3C76A4111CE191320084DB90 /* YMRichTextPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C76A4101CE191320084DB90 /* YMRichTextPattern.m */; };
-		3C76A4121CE191320084DB90 /* YMRichTextPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C76A4101CE191320084DB90 /* YMRichTextPattern.m */; };
-		3C76A4131CE191320084DB90 /* YMRichTextPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C76A4101CE191320084DB90 /* YMRichTextPattern.m */; };
-		3C76A41B1CE194620084DB90 /* NSTextAttachment+YMRTPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C76A41A1CE194620084DB90 /* NSTextAttachment+YMRTPattern.m */; };
-		3C76A41C1CE194620084DB90 /* NSTextAttachment+YMRTPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C76A41A1CE194620084DB90 /* NSTextAttachment+YMRTPattern.m */; };
-		3C76A41D1CE194620084DB90 /* NSTextAttachment+YMRTPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C76A41A1CE194620084DB90 /* NSTextAttachment+YMRTPattern.m */; };
-		3C76A4201CE1A7C50084DB90 /* NSRegularExpression+YMRTPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C76A41F1CE1A7C50084DB90 /* NSRegularExpression+YMRTPattern.m */; };
-		3C76A4211CE1A7C50084DB90 /* NSRegularExpression+YMRTPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C76A41F1CE1A7C50084DB90 /* NSRegularExpression+YMRTPattern.m */; };
-		3C76A4221CE1A7C50084DB90 /* NSRegularExpression+YMRTPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C76A41F1CE1A7C50084DB90 /* NSRegularExpression+YMRTPattern.m */; };
 		3C76A4241CE1ADA20084DB90 /* RegularExperssionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C76A4231CE1ADA20084DB90 /* RegularExperssionTests.m */; };
-		3C76A4281CE1CD9E0084DB90 /* YMEmojAttachement.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C76A4271CE1CD9E0084DB90 /* YMEmojAttachement.m */; };
-		3C76A4291CE1CD9E0084DB90 /* YMEmojAttachement.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C76A4271CE1CD9E0084DB90 /* YMEmojAttachement.m */; };
-		3C76A42A1CE1CD9E0084DB90 /* YMEmojAttachement.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C76A4271CE1CD9E0084DB90 /* YMEmojAttachement.m */; };
 		3C76A4D31CE1CECF0084DB90 /* emoj_s_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C76A42C1CE1CECF0084DB90 /* emoj_s_normal@2x.png */; };
 		3C76A4D41CE1CECF0084DB90 /* emoj_s_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C76A42C1CE1CECF0084DB90 /* emoj_s_normal@2x.png */; };
 		3C76A4D51CE1CECF0084DB90 /* emoj_s_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C76A42C1CE1CECF0084DB90 /* emoj_s_normal@2x.png */; };
@@ -538,21 +559,12 @@
 		3C9F04D21CE05385004F7B4D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C9F04D01CE05385004F7B4D /* LaunchScreen.storyboard */; };
 		3C9F04DD1CE05385004F7B4D /* UICategoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F04DC1CE05385004F7B4D /* UICategoryTests.m */; };
 		3C9F04E81CE05385004F7B4D /* UICategoryUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F04E71CE05385004F7B4D /* UICategoryUITests.m */; };
-		3C9F04FD1CE0691F004F7B4D /* UILabel+ContentEdgetInsets.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F04FC1CE0691F004F7B4D /* UILabel+ContentEdgetInsets.m */; };
-		3C9F04FE1CE0691F004F7B4D /* UILabel+ContentEdgetInsets.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F04FC1CE0691F004F7B4D /* UILabel+ContentEdgetInsets.m */; };
-		3C9F04FF1CE0691F004F7B4D /* UILabel+ContentEdgetInsets.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F04FC1CE0691F004F7B4D /* UILabel+ContentEdgetInsets.m */; };
 		3C9F05021CE069A1004F7B4D /* Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F05011CE069A1004F7B4D /* Swizzling.m */; };
 		3C9F05031CE069A1004F7B4D /* Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F05011CE069A1004F7B4D /* Swizzling.m */; };
 		3C9F05041CE069A1004F7B4D /* Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F05011CE069A1004F7B4D /* Swizzling.m */; };
 		3C9F050D1CE09305004F7B4D /* YMRichTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F050C1CE09305004F7B4D /* YMRichTextView.m */; };
 		3C9F050E1CE09305004F7B4D /* YMRichTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F050C1CE09305004F7B4D /* YMRichTextView.m */; };
 		3C9F050F1CE09305004F7B4D /* YMRichTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F050C1CE09305004F7B4D /* YMRichTextView.m */; };
-		3C9F051A1CE0975C004F7B4D /* YMImageAttachement.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F05191CE0975C004F7B4D /* YMImageAttachement.m */; };
-		3C9F051B1CE0975C004F7B4D /* YMImageAttachement.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F05191CE0975C004F7B4D /* YMImageAttachement.m */; };
-		3C9F051C1CE0975C004F7B4D /* YMImageAttachement.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F05191CE0975C004F7B4D /* YMImageAttachement.m */; };
-		3C9F051F1CE0976A004F7B4D /* YMOtherAttachement.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F051E1CE0976A004F7B4D /* YMOtherAttachement.m */; };
-		3C9F05201CE0976A004F7B4D /* YMOtherAttachement.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F051E1CE0976A004F7B4D /* YMOtherAttachement.m */; };
-		3C9F05211CE0976A004F7B4D /* YMOtherAttachement.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F051E1CE0976A004F7B4D /* YMOtherAttachement.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -573,23 +585,37 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3C76A3F01CE17AD90084DB90 /* YMRichMapMarkProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMRichMapMarkProtocol.h; sourceTree = "<group>"; };
-		3C76A3F11CE1818E0084DB90 /* YMEmojPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMEmojPattern.h; sourceTree = "<group>"; };
-		3C76A3F21CE1818E0084DB90 /* YMEmojPattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMEmojPattern.m; sourceTree = "<group>"; };
+		3C2054291CE33E80008693AA /* emoj_s_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "emoj_s_pressed@2x.png"; sourceTree = "<group>"; };
+		3C5F66231CE487EB00BC4F98 /* YMEmojAttachement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMEmojAttachement.h; sourceTree = "<group>"; };
+		3C5F66241CE487EB00BC4F98 /* YMEmojAttachement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMEmojAttachement.m; sourceTree = "<group>"; };
+		3C5F66251CE487EB00BC4F98 /* YMImageAttachement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMImageAttachement.h; sourceTree = "<group>"; };
+		3C5F66261CE487EB00BC4F98 /* YMImageAttachement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMImageAttachement.m; sourceTree = "<group>"; };
+		3C5F66271CE487EB00BC4F98 /* YMOtherAttachement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMOtherAttachement.h; sourceTree = "<group>"; };
+		3C5F66281CE487EB00BC4F98 /* YMOtherAttachement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMOtherAttachement.m; sourceTree = "<group>"; };
+		3C5F662A1CE487EB00BC4F98 /* YMEmojPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMEmojPattern.h; sourceTree = "<group>"; };
+		3C5F662B1CE487EB00BC4F98 /* YMEmojPattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMEmojPattern.m; sourceTree = "<group>"; };
+		3C5F662C1CE487EB00BC4F98 /* YMImagePattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMImagePattern.h; sourceTree = "<group>"; };
+		3C5F662D1CE487EB00BC4F98 /* YMImagePattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMImagePattern.m; sourceTree = "<group>"; };
+		3C5F662E1CE487EB00BC4F98 /* YMRichMapMarkProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMRichMapMarkProtocol.h; sourceTree = "<group>"; };
+		3C5F662F1CE487EB00BC4F98 /* YMRichTextPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMRichTextPattern.h; sourceTree = "<group>"; };
+		3C5F66301CE487EB00BC4F98 /* YMRichTextPattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMRichTextPattern.m; sourceTree = "<group>"; };
+		3C5F66321CE487EB00BC4F98 /* NSRegularExpression+YMRTPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSRegularExpression+YMRTPattern.h"; sourceTree = "<group>"; };
+		3C5F66331CE487EB00BC4F98 /* NSRegularExpression+YMRTPattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSRegularExpression+YMRTPattern.m"; sourceTree = "<group>"; };
+		3C5F66341CE487EB00BC4F98 /* NSString+YMRTPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+YMRTPattern.h"; sourceTree = "<group>"; };
+		3C5F66351CE487EB00BC4F98 /* NSString+YMRTPattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+YMRTPattern.m"; sourceTree = "<group>"; };
+		3C5F66361CE487EB00BC4F98 /* NSTextAttachment+YMRTPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTextAttachment+YMRTPattern.h"; sourceTree = "<group>"; };
+		3C5F66371CE487EB00BC4F98 /* NSTextAttachment+YMRTPattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTextAttachment+YMRTPattern.m"; sourceTree = "<group>"; };
+		3C5F66381CE487EB00BC4F98 /* UILabel+ContentEdgetInsets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+ContentEdgetInsets.h"; sourceTree = "<group>"; };
+		3C5F66391CE487EB00BC4F98 /* UILabel+ContentEdgetInsets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+ContentEdgetInsets.m"; sourceTree = "<group>"; };
+		3C5F663A1CE487EB00BC4F98 /* UITextView+RichText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+RichText.h"; sourceTree = "<group>"; };
+		3C5F663B1CE487EB00BC4F98 /* UITextView+RichText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+RichText.m"; sourceTree = "<group>"; };
+		3C5F663C1CE487EB00BC4F98 /* UIView+ContentEdgetInsets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ContentEdgetInsets.h"; sourceTree = "<group>"; };
+		3C5F663D1CE487EB00BC4F98 /* UIView+ContentEdgetInsets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ContentEdgetInsets.m"; sourceTree = "<group>"; };
+		3C5F663E1CE487EB00BC4F98 /* YMRTPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMRTPattern.h; sourceTree = "<group>"; };
 		3C76A4051CE187120084DB90 /* YMPatternResults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMPatternResults.h; sourceTree = "<group>"; };
 		3C76A4061CE187120084DB90 /* YMPatternResults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMPatternResults.m; sourceTree = "<group>"; };
-		3C76A40A1CE190B10084DB90 /* NSString+YMRTPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+YMRTPattern.h"; sourceTree = "<group>"; };
-		3C76A40B1CE190B10084DB90 /* NSString+YMRTPattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+YMRTPattern.m"; sourceTree = "<group>"; };
-		3C76A40F1CE191320084DB90 /* YMRichTextPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMRichTextPattern.h; sourceTree = "<group>"; };
-		3C76A4101CE191320084DB90 /* YMRichTextPattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMRichTextPattern.m; sourceTree = "<group>"; };
-		3C76A4191CE194620084DB90 /* NSTextAttachment+YMRTPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTextAttachment+YMRTPattern.h"; sourceTree = "<group>"; };
-		3C76A41A1CE194620084DB90 /* NSTextAttachment+YMRTPattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTextAttachment+YMRTPattern.m"; sourceTree = "<group>"; };
-		3C76A41E1CE1A7C50084DB90 /* NSRegularExpression+YMRTPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSRegularExpression+YMRTPattern.h"; sourceTree = "<group>"; };
-		3C76A41F1CE1A7C50084DB90 /* NSRegularExpression+YMRTPattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSRegularExpression+YMRTPattern.m"; sourceTree = "<group>"; };
 		3C76A4231CE1ADA20084DB90 /* RegularExperssionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegularExperssionTests.m; sourceTree = "<group>"; };
 		3C76A4251CE1C0420084DB90 /* YMRTHead.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMRTHead.h; sourceTree = "<group>"; };
-		3C76A4261CE1CD9E0084DB90 /* YMEmojAttachement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMEmojAttachement.h; sourceTree = "<group>"; };
-		3C76A4271CE1CD9E0084DB90 /* YMEmojAttachement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMEmojAttachement.m; sourceTree = "<group>"; };
 		3C76A42C1CE1CECF0084DB90 /* emoj_s_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "emoj_s_normal@2x.png"; sourceTree = "<group>"; };
 		3C76A42D1CE1CECF0084DB90 /* emoj_s_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "emoj_s_pressed@2x.png"; sourceTree = "<group>"; };
 		3C76A42E1CE1CECF0084DB90 /* emoji.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = emoji.plist; sourceTree = "<group>"; };
@@ -773,16 +799,10 @@
 		3C9F04E31CE05385004F7B4D /* UICategoryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UICategoryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C9F04E71CE05385004F7B4D /* UICategoryUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UICategoryUITests.m; sourceTree = "<group>"; };
 		3C9F04E91CE05385004F7B4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3C9F04FB1CE0691F004F7B4D /* UILabel+ContentEdgetInsets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+ContentEdgetInsets.h"; sourceTree = "<group>"; };
-		3C9F04FC1CE0691F004F7B4D /* UILabel+ContentEdgetInsets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+ContentEdgetInsets.m"; sourceTree = "<group>"; };
 		3C9F05001CE069A1004F7B4D /* Swizzling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Swizzling.h; sourceTree = "<group>"; };
 		3C9F05011CE069A1004F7B4D /* Swizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Swizzling.m; sourceTree = "<group>"; };
 		3C9F050B1CE09305004F7B4D /* YMRichTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMRichTextView.h; sourceTree = "<group>"; };
 		3C9F050C1CE09305004F7B4D /* YMRichTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMRichTextView.m; sourceTree = "<group>"; };
-		3C9F05181CE0975C004F7B4D /* YMImageAttachement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMImageAttachement.h; sourceTree = "<group>"; };
-		3C9F05191CE0975C004F7B4D /* YMImageAttachement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMImageAttachement.m; sourceTree = "<group>"; };
-		3C9F051D1CE0976A004F7B4D /* YMOtherAttachement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMOtherAttachement.h; sourceTree = "<group>"; };
-		3C9F051E1CE0976A004F7B4D /* YMOtherAttachement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMOtherAttachement.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -810,6 +830,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C5F66221CE487EB00BC4F98 /* YMAttachement */ = {
+			isa = PBXGroup;
+			children = (
+				3C5F66231CE487EB00BC4F98 /* YMEmojAttachement.h */,
+				3C5F66241CE487EB00BC4F98 /* YMEmojAttachement.m */,
+				3C5F66251CE487EB00BC4F98 /* YMImageAttachement.h */,
+				3C5F66261CE487EB00BC4F98 /* YMImageAttachement.m */,
+				3C5F66271CE487EB00BC4F98 /* YMOtherAttachement.h */,
+				3C5F66281CE487EB00BC4F98 /* YMOtherAttachement.m */,
+			);
+			path = YMAttachement;
+			sourceTree = "<group>";
+		};
+		3C5F66291CE487EB00BC4F98 /* YMRichTextPattern */ = {
+			isa = PBXGroup;
+			children = (
+				3C5F662A1CE487EB00BC4F98 /* YMEmojPattern.h */,
+				3C5F662B1CE487EB00BC4F98 /* YMEmojPattern.m */,
+				3C5F662C1CE487EB00BC4F98 /* YMImagePattern.h */,
+				3C5F662D1CE487EB00BC4F98 /* YMImagePattern.m */,
+				3C5F662E1CE487EB00BC4F98 /* YMRichMapMarkProtocol.h */,
+				3C5F662F1CE487EB00BC4F98 /* YMRichTextPattern.h */,
+				3C5F66301CE487EB00BC4F98 /* YMRichTextPattern.m */,
+			);
+			path = YMRichTextPattern;
+			sourceTree = "<group>";
+		};
+		3C5F66311CE487EB00BC4F98 /* YMRTExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				3C5F66321CE487EB00BC4F98 /* NSRegularExpression+YMRTPattern.h */,
+				3C5F66331CE487EB00BC4F98 /* NSRegularExpression+YMRTPattern.m */,
+				3C5F66341CE487EB00BC4F98 /* NSString+YMRTPattern.h */,
+				3C5F66351CE487EB00BC4F98 /* NSString+YMRTPattern.m */,
+				3C5F66361CE487EB00BC4F98 /* NSTextAttachment+YMRTPattern.h */,
+				3C5F66371CE487EB00BC4F98 /* NSTextAttachment+YMRTPattern.m */,
+				3C5F66381CE487EB00BC4F98 /* UILabel+ContentEdgetInsets.h */,
+				3C5F66391CE487EB00BC4F98 /* UILabel+ContentEdgetInsets.m */,
+				3C5F663A1CE487EB00BC4F98 /* UITextView+RichText.h */,
+				3C5F663B1CE487EB00BC4F98 /* UITextView+RichText.m */,
+				3C5F663C1CE487EB00BC4F98 /* UIView+ContentEdgetInsets.h */,
+				3C5F663D1CE487EB00BC4F98 /* UIView+ContentEdgetInsets.m */,
+				3C5F663E1CE487EB00BC4F98 /* YMRTPattern.h */,
+			);
+			path = YMRTExtensions;
+			sourceTree = "<group>";
+		};
 		3C76A42B1CE1CECF0084DB90 /* Emoji */ = {
 			isa = PBXGroup;
 			children = (
@@ -1035,6 +1102,7 @@
 			children = (
 				3C9F04DC1CE05385004F7B4D /* UICategoryTests.m */,
 				3C9F04DE1CE05385004F7B4D /* Info.plist */,
+				3C2054291CE33E80008693AA /* emoj_s_pressed@2x.png */,
 				3C76A4231CE1ADA20084DB90 /* RegularExperssionTests.m */,
 			);
 			path = UICategoryTests;
@@ -1052,31 +1120,15 @@
 		3C9F04F51CE05B2D004F7B4D /* UICategory */ = {
 			isa = PBXGroup;
 			children = (
-				3C9F04FB1CE0691F004F7B4D /* UILabel+ContentEdgetInsets.h */,
-				3C9F04FC1CE0691F004F7B4D /* UILabel+ContentEdgetInsets.m */,
+				3C5F66221CE487EB00BC4F98 /* YMAttachement */,
+				3C5F66291CE487EB00BC4F98 /* YMRichTextPattern */,
+				3C5F66311CE487EB00BC4F98 /* YMRTExtensions */,
 				3C9F05001CE069A1004F7B4D /* Swizzling.h */,
 				3C9F05011CE069A1004F7B4D /* Swizzling.m */,
 				3C9F050B1CE09305004F7B4D /* YMRichTextView.h */,
 				3C9F050C1CE09305004F7B4D /* YMRichTextView.m */,
-				3C9F05181CE0975C004F7B4D /* YMImageAttachement.h */,
-				3C9F05191CE0975C004F7B4D /* YMImageAttachement.m */,
-				3C76A4261CE1CD9E0084DB90 /* YMEmojAttachement.h */,
-				3C76A4271CE1CD9E0084DB90 /* YMEmojAttachement.m */,
-				3C9F051D1CE0976A004F7B4D /* YMOtherAttachement.h */,
-				3C9F051E1CE0976A004F7B4D /* YMOtherAttachement.m */,
-				3C76A3F01CE17AD90084DB90 /* YMRichMapMarkProtocol.h */,
-				3C76A3F11CE1818E0084DB90 /* YMEmojPattern.h */,
-				3C76A3F21CE1818E0084DB90 /* YMEmojPattern.m */,
 				3C76A4051CE187120084DB90 /* YMPatternResults.h */,
 				3C76A4061CE187120084DB90 /* YMPatternResults.m */,
-				3C76A40A1CE190B10084DB90 /* NSString+YMRTPattern.h */,
-				3C76A40B1CE190B10084DB90 /* NSString+YMRTPattern.m */,
-				3C76A40F1CE191320084DB90 /* YMRichTextPattern.h */,
-				3C76A4101CE191320084DB90 /* YMRichTextPattern.m */,
-				3C76A4191CE194620084DB90 /* NSTextAttachment+YMRTPattern.h */,
-				3C76A41A1CE194620084DB90 /* NSTextAttachment+YMRTPattern.m */,
-				3C76A41E1CE1A7C50084DB90 /* NSRegularExpression+YMRTPattern.h */,
-				3C76A41F1CE1A7C50084DB90 /* NSRegularExpression+YMRTPattern.m */,
 				3C76A4251CE1C0420084DB90 /* YMRTHead.h */,
 			);
 			path = UICategory;
@@ -1313,6 +1365,7 @@
 				3C76A5481CE1CECF0084DB90 /* emoji_123@2x.png in Resources */,
 				3C76A5721CE1CECF0084DB90 /* emoji_136@2x.png in Resources */,
 				3C76A6681CE1CECF0084DB90 /* emoji_70@2x.png in Resources */,
+				3C20542A1CE33E80008693AA /* emoj_s_pressed@2x.png in Resources */,
 				3C76A61A1CE1CECF0084DB90 /* emoji_44@2x.png in Resources */,
 				3C76A4FD1CE1CECF0084DB90 /* emoji_100@2x.png in Resources */,
 				3C76A5451CE1CECF0084DB90 /* emoji_122@2x.png in Resources */,
@@ -1454,6 +1507,7 @@
 				3C76A5881CE1CECF0084DB90 /* emoji_142@2x.png in Resources */,
 				3C76A5941CE1CECF0084DB90 /* emoji_146@2x.png in Resources */,
 				3C76A5CA1CE1CECF0084DB90 /* emoji_18@2x.png in Resources */,
+				3C20542B1CE33E80008693AA /* emoj_s_pressed@2x.png in Resources */,
 				3C76A5401CE1CECF0084DB90 /* emoji_120@2x.png in Resources */,
 				3C76A5E81CE1CECF0084DB90 /* emoji_27@2x.png in Resources */,
 				3C76A6751CE1CECF0084DB90 /* emoji_74@2x.png in Resources */,
@@ -1628,6 +1682,7 @@
 				3C76A5891CE1CECF0084DB90 /* emoji_142@2x.png in Resources */,
 				3C76A5951CE1CECF0084DB90 /* emoji_146@2x.png in Resources */,
 				3C76A5CB1CE1CECF0084DB90 /* emoji_18@2x.png in Resources */,
+				3C20542C1CE33E80008693AA /* emoj_s_pressed@2x.png in Resources */,
 				3C76A5411CE1CECF0084DB90 /* emoji_120@2x.png in Resources */,
 				3C76A5E91CE1CECF0084DB90 /* emoji_27@2x.png in Resources */,
 				3C76A6761CE1CECF0084DB90 /* emoji_74@2x.png in Resources */,
@@ -1714,20 +1769,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C76A4071CE187120084DB90 /* YMPatternResults.m in Sources */,
-				3C76A40C1CE190B10084DB90 /* NSString+YMRTPattern.m in Sources */,
-				3C9F04FD1CE0691F004F7B4D /* UILabel+ContentEdgetInsets.m in Sources */,
+				3C5F66571CE487EB00BC4F98 /* NSTextAttachment+YMRTPattern.m in Sources */,
 				3C9F05021CE069A1004F7B4D /* Swizzling.m in Sources */,
+				3C5F664B1CE487EB00BC4F98 /* YMImagePattern.m in Sources */,
+				3C5F665D1CE487EB00BC4F98 /* UITextView+RichText.m in Sources */,
+				3C5F663F1CE487EB00BC4F98 /* YMEmojAttachement.m in Sources */,
 				3C9F04CA1CE05385004F7B4D /* ViewController.m in Sources */,
-				3C76A4111CE191320084DB90 /* YMRichTextPattern.m in Sources */,
+				3C5F664E1CE487EB00BC4F98 /* YMRichTextPattern.m in Sources */,
+				3C5F66601CE487EB00BC4F98 /* UIView+ContentEdgetInsets.m in Sources */,
 				3C9F04C71CE05385004F7B4D /* AppDelegate.m in Sources */,
+				3C5F66451CE487EB00BC4F98 /* YMOtherAttachement.m in Sources */,
 				3C9F04C41CE05385004F7B4D /* main.m in Sources */,
-				3C9F051F1CE0976A004F7B4D /* YMOtherAttachement.m in Sources */,
-				3C76A3F31CE1818E0084DB90 /* YMEmojPattern.m in Sources */,
+				3C5F665A1CE487EB00BC4F98 /* UILabel+ContentEdgetInsets.m in Sources */,
+				3C5F66481CE487EB00BC4F98 /* YMEmojPattern.m in Sources */,
+				3C5F66421CE487EB00BC4F98 /* YMImageAttachement.m in Sources */,
+				3C5F66511CE487EB00BC4F98 /* NSRegularExpression+YMRTPattern.m in Sources */,
+				3C5F66541CE487EB00BC4F98 /* NSString+YMRTPattern.m in Sources */,
 				3C9F050D1CE09305004F7B4D /* YMRichTextView.m in Sources */,
-				3C76A4281CE1CD9E0084DB90 /* YMEmojAttachement.m in Sources */,
-				3C9F051A1CE0975C004F7B4D /* YMImageAttachement.m in Sources */,
-				3C76A4201CE1A7C50084DB90 /* NSRegularExpression+YMRTPattern.m in Sources */,
-				3C76A41B1CE194620084DB90 /* NSTextAttachment+YMRTPattern.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1735,20 +1793,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C9F051B1CE0975C004F7B4D /* YMImageAttachement.m in Sources */,
 				3C76A4081CE187120084DB90 /* YMPatternResults.m in Sources */,
-				3C76A3F41CE1818E0084DB90 /* YMEmojPattern.m in Sources */,
-				3C76A4121CE191320084DB90 /* YMRichTextPattern.m in Sources */,
+				3C5F664F1CE487EB00BC4F98 /* YMRichTextPattern.m in Sources */,
 				3C9F04DD1CE05385004F7B4D /* UICategoryTests.m in Sources */,
-				3C9F04FE1CE0691F004F7B4D /* UILabel+ContentEdgetInsets.m in Sources */,
-				3C76A40D1CE190B10084DB90 /* NSString+YMRTPattern.m in Sources */,
 				3C76A4241CE1ADA20084DB90 /* RegularExperssionTests.m in Sources */,
+				3C5F665E1CE487EB00BC4F98 /* UITextView+RichText.m in Sources */,
 				3C9F05031CE069A1004F7B4D /* Swizzling.m in Sources */,
-				3C76A4291CE1CD9E0084DB90 /* YMEmojAttachement.m in Sources */,
-				3C76A4211CE1A7C50084DB90 /* NSRegularExpression+YMRTPattern.m in Sources */,
 				3C9F050E1CE09305004F7B4D /* YMRichTextView.m in Sources */,
-				3C76A41C1CE194620084DB90 /* NSTextAttachment+YMRTPattern.m in Sources */,
-				3C9F05201CE0976A004F7B4D /* YMOtherAttachement.m in Sources */,
+				3C5F66461CE487EB00BC4F98 /* YMOtherAttachement.m in Sources */,
+				3C5F66581CE487EB00BC4F98 /* NSTextAttachment+YMRTPattern.m in Sources */,
+				3C5F66401CE487EB00BC4F98 /* YMEmojAttachement.m in Sources */,
+				3C5F66611CE487EB00BC4F98 /* UIView+ContentEdgetInsets.m in Sources */,
+				3C5F66521CE487EB00BC4F98 /* NSRegularExpression+YMRTPattern.m in Sources */,
+				3C5F665B1CE487EB00BC4F98 /* UILabel+ContentEdgetInsets.m in Sources */,
+				3C5F66431CE487EB00BC4F98 /* YMImageAttachement.m in Sources */,
+				3C5F664C1CE487EB00BC4F98 /* YMImagePattern.m in Sources */,
+				3C5F66551CE487EB00BC4F98 /* NSString+YMRTPattern.m in Sources */,
+				3C5F66491CE487EB00BC4F98 /* YMEmojPattern.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1756,19 +1817,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C9F051C1CE0975C004F7B4D /* YMImageAttachement.m in Sources */,
 				3C76A4091CE187120084DB90 /* YMPatternResults.m in Sources */,
-				3C76A3F51CE1818E0084DB90 /* YMEmojPattern.m in Sources */,
-				3C76A4131CE191320084DB90 /* YMRichTextPattern.m in Sources */,
+				3C5F664A1CE487EB00BC4F98 /* YMEmojPattern.m in Sources */,
+				3C5F665F1CE487EB00BC4F98 /* UITextView+RichText.m in Sources */,
+				3C5F66561CE487EB00BC4F98 /* NSString+YMRTPattern.m in Sources */,
+				3C5F66621CE487EB00BC4F98 /* UIView+ContentEdgetInsets.m in Sources */,
+				3C5F664D1CE487EB00BC4F98 /* YMImagePattern.m in Sources */,
+				3C5F66501CE487EB00BC4F98 /* YMRichTextPattern.m in Sources */,
+				3C5F66471CE487EB00BC4F98 /* YMOtherAttachement.m in Sources */,
+				3C5F66411CE487EB00BC4F98 /* YMEmojAttachement.m in Sources */,
 				3C9F04E81CE05385004F7B4D /* UICategoryUITests.m in Sources */,
-				3C76A42A1CE1CD9E0084DB90 /* YMEmojAttachement.m in Sources */,
-				3C9F04FF1CE0691F004F7B4D /* UILabel+ContentEdgetInsets.m in Sources */,
-				3C76A40E1CE190B10084DB90 /* NSString+YMRTPattern.m in Sources */,
 				3C9F05041CE069A1004F7B4D /* Swizzling.m in Sources */,
-				3C76A4221CE1A7C50084DB90 /* NSRegularExpression+YMRTPattern.m in Sources */,
+				3C5F66441CE487EB00BC4F98 /* YMImageAttachement.m in Sources */,
+				3C5F665C1CE487EB00BC4F98 /* UILabel+ContentEdgetInsets.m in Sources */,
 				3C9F050F1CE09305004F7B4D /* YMRichTextView.m in Sources */,
-				3C76A41D1CE194620084DB90 /* NSTextAttachment+YMRTPattern.m in Sources */,
-				3C9F05211CE0976A004F7B4D /* YMOtherAttachement.m in Sources */,
+				3C5F66531CE487EB00BC4F98 /* NSRegularExpression+YMRTPattern.m in Sources */,
+				3C5F66591CE487EB00BC4F98 /* NSTextAttachment+YMRTPattern.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

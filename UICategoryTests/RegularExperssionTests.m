@@ -7,7 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "NSString+YMRTPattern.h"
+//#import "NSString+YMRTPattern.h"
 
 @interface RegularExperssionTests : XCTestCase
 
@@ -41,6 +41,11 @@
 //    NSString *rexTestString = @"测试[你好么],欢迎。[Hello],测试内容[Welcome],哈哈[笑脸],难啊";
 //    NSArray *rexResults = [rexTestString patternResultWithPattern:@"(\\[[a-zA-Z0-9]{0,}[\u4E00-\u9FA5]{0,}\\])"];
 //    NSLog(@"%@",rexResults);
+}
+
+- (void) testDataAsset {
+    NSDataAsset *asset = [[NSDataAsset alloc] initWithName:@"emoj_s_pressed@2x.png" bundle:[NSBundle mainBundle]];
+    NSLog(@"%@",asset.typeIdentifier);
 }
 
 @end

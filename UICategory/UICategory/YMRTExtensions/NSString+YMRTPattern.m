@@ -44,10 +44,7 @@ static NSMutableArray *patternModels;
     NSArray *matchResults = [rex matchesResults:self];
     NSMutableArray *rexFilterResult = [[NSMutableArray alloc] init];
     for (NSTextCheckingResult *result in matchResults) {
-        YMPatternResults *filter = [[YMPatternResults alloc] init];
-        filter.range = result.range;
-        filter.result = [self substringWithRange:result.range];
-        NSLog(@"%@ : %@",NSStringFromRange(filter.range), filter.result);
+        YMPatternResults *filter = [[YMPatternResults alloc] initWithString:self checkResult:result pattern:pattern];
         [rexFilterResult addObject:filter];
     }
     return rexFilterResult;
@@ -66,15 +63,11 @@ static NSMutableArray *patternModels;
         NSArray *patternResults = [str patternResultWithPattern:pattern];
         for (NSInteger i = [patternResults count] - 1; i >= 0; i--) {
             YMPatternResults *result = patternResults[i];
-            if ([pattern patternType] == YMRichPatternWithAttachement) {
-                [attr replaceCharactersInRange:[result range] withString:@""];
-                [attr insertAttributedString:[NSAttributedString attributedStringWithAttachment:[pattern attachementWithPattenResult:result]] atIndex:result.range.location];
-            } else {
-                NSString *showString = [pattern showString:result];
-                NSDictionary *attributs = [pattern showStringattributedParams:result];
-                [attr replaceCharactersInRange:[result range] withString:showString];
-                [attr addAttributes:attributs range:NSMakeRange(result.range.location, [showString length])];
+            NSAttributedString *attrStr = result.attributeString;
+            if (!attrStr) {
+                continue;
             }
+            [attr replaceCharactersInRange:[result range] withAttributedString:result.attributeString];
         }
     }
     return attr;

@@ -17,15 +17,21 @@
 
 @property (nonatomic, assign) YMRichPatternType patternType;
 
-#pragma mark --Attribute Metthod
+- (NSDictionary *)styleParams:(NSString *)result;
 
-- (NSDictionary *)showStringattributedParams:(YMPatternResults *)result;
+- (NSString *)showString:(NSString *)result;
 
-- (NSString *)showString:(YMPatternResults *)result;
+- (NSString *)formatResourceAdjustString:(NSString *)result;
 
 #pragma mark --Attachement Method
+/**
+ *  YMRichPatternWithAttachement    类型数据解析类
+ */
 - (Class)attachementClass;
 
-- (NSTextAttachment *)attachementWithPattenResult:(YMPatternResults *)result;
+/**
+ *  YMRichTextPatternWithAttribute 类型数据解析参数
+ */
+- (Class)styleParamsParserClass;
 
 @end
