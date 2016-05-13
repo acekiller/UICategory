@@ -15,7 +15,8 @@
 {
     self = [super init];
     if (self) {
-        self.regular = @"(\\[[a-zA-Z0-9]{0,}[\u4E00-\u9FA5]{0,}\\])";
+        self.regular = @"(\\[[a-zA-Z0-9\u4E00-\u9FA5_]{0,}\\])";
+        self.patternType = YMRichPatternWithAttachement;
     }
     return self;
 }
@@ -25,11 +26,11 @@
     return [YMEmojAttachement class];
 }
 
-- (NSString *)formatResourceAdjustString:(NSString *)result
+- (NSString *)showString:(NSString *)result
 {
     NSMutableString *emojName = [result mutableCopy];
     [emojName replaceCharactersInRange:NSMakeRange(0, 1) withString:@""];
-    [emojName replaceCharactersInRange:NSMakeRange([emojName length] - 2, 1) withString:@""];
+    [emojName replaceCharactersInRange:NSMakeRange([emojName length] - 1, 1) withString:@""];
     return emojName;
 }
 

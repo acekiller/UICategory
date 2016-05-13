@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3C9F047F1CE043BC004F7B4D"
+               BlueprintIdentifier = "3C9F04BE1CE05385004F7B4D"
                BuildableName = "UICategory.app"
                BlueprintName = "UICategory"
                ReferencedContainer = "container:UICategory.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3C9F04981CE043BC004F7B4D"
+               BlueprintIdentifier = "3C9F04D71CE05385004F7B4D"
                BuildableName = "UICategoryTests.xctest"
                BlueprintName = "UICategoryTests"
                ReferencedContainer = "container:UICategory.xcodeproj">
@@ -42,7 +42,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3C9F04A31CE043BC004F7B4D"
+               BlueprintIdentifier = "3C9F04E21CE05385004F7B4D"
                BuildableName = "UICategoryUITests.xctest"
                BlueprintName = "UICategoryUITests"
                ReferencedContainer = "container:UICategory.xcodeproj">
@@ -52,7 +52,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3C9F047F1CE043BC004F7B4D"
+            BlueprintIdentifier = "3C9F04BE1CE05385004F7B4D"
             BuildableName = "UICategory.app"
             BlueprintName = "UICategory"
             ReferencedContainer = "container:UICategory.xcodeproj">
@@ -75,13 +75,18 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3C9F047F1CE043BC004F7B4D"
+            BlueprintIdentifier = "3C9F04BE1CE05385004F7B4D"
             BuildableName = "UICategory.app"
             BlueprintName = "UICategory"
             ReferencedContainer = "container:UICategory.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
+         <AdditionalOption
+            key = "NSZombieEnabled"
+            value = "YES"
+            isEnabled = "YES">
+         </AdditionalOption>
       </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
@@ -94,7 +99,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3C9F047F1CE043BC004F7B4D"
+            BlueprintIdentifier = "3C9F04BE1CE05385004F7B4D"
             BuildableName = "UICategory.app"
             BlueprintName = "UICategory"
             ReferencedContainer = "container:UICategory.xcodeproj">

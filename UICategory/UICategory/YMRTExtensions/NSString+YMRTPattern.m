@@ -40,11 +40,14 @@ static NSMutableArray *patternModels;
 
 - (NSArray <YMPatternResults *>* )patternResultWithPattern:(id<YMRichMapMarkProtocol>)pattern
 {
-    NSRegularExpression *rex = [NSRegularExpression regularExpressionWithPattern:[pattern regular] options:NSRegularExpressionCaseInsensitive error:nil];
+    NSRegularExpression *rex = [NSRegularExpression regularExpressionWithPattern:[pattern regular]
+                                                                         options:NSRegularExpressionCaseInsensitive
+                                                                           error:nil];
     NSArray *matchResults = [rex matchesResults:self];
     NSMutableArray *rexFilterResult = [[NSMutableArray alloc] init];
     for (NSTextCheckingResult *result in matchResults) {
-        YMPatternResults *filter = [[YMPatternResults alloc] initWithString:self checkResult:result pattern:pattern];
+        YMPatternResults *filter = [pattern patternResultStringFromString:self
+                                                              checkResult:result];
         [rexFilterResult addObject:filter];
     }
     return rexFilterResult;
@@ -57,9 +60,10 @@ static NSMutableArray *patternModels;
 
 - (NSMutableAttributedString *)mutableAttributedStringWithPattens:(NSArray *)richTextMarkMaps
 {
-    NSMutableString *str = [[NSMutableString alloc] initWithString:self];
-    NSMutableAttributedString *attr = [[NSMutableAttributedString alloc] initWithString:str];
+    NSMutableAttributedString *attr = [[NSMutableAttributedString alloc] initWithString:self];
+    
     for (id<YMRichMapMarkProtocol> pattern in richTextMarkMaps) {
+        NSMutableString *str = [[NSMutableString alloc] initWithString:attr.string];
         NSArray *patternResults = [str patternResultWithPattern:pattern];
         for (NSInteger i = [patternResults count] - 1; i >= 0; i--) {
             YMPatternResults *result = patternResults[i];
@@ -67,7 +71,8 @@ static NSMutableArray *patternModels;
             if (!attrStr) {
                 continue;
             }
-            [attr replaceCharactersInRange:[result range] withAttributedString:result.attributeString];
+            [attr replaceCharactersInRange:[result range]
+                      withAttributedString:result.attributeString];
         }
     }
     return attr;

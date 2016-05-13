@@ -11,7 +11,7 @@
 
 typedef NS_ENUM(NSUInteger,YMRichPatternType) {
     YMRichPatternWithAttachement,
-    YMRichTextPatternWithAttribute,
+    YMRichPatternWithAttribute,
 };
 
 #endif /* YMRTHead_h */

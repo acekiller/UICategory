@@ -46,6 +46,12 @@
 		3C5F66601CE487EB00BC4F98 /* UIView+ContentEdgetInsets.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F663D1CE487EB00BC4F98 /* UIView+ContentEdgetInsets.m */; };
 		3C5F66611CE487EB00BC4F98 /* UIView+ContentEdgetInsets.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F663D1CE487EB00BC4F98 /* UIView+ContentEdgetInsets.m */; };
 		3C5F66621CE487EB00BC4F98 /* UIView+ContentEdgetInsets.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F663D1CE487EB00BC4F98 /* UIView+ContentEdgetInsets.m */; };
+		3C73CA311CE5645D0008F59F /* YMURLPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C73CA301CE5645D0008F59F /* YMURLPattern.m */; };
+		3C73CA321CE5645D0008F59F /* YMURLPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C73CA301CE5645D0008F59F /* YMURLPattern.m */; };
+		3C73CA331CE5645D0008F59F /* YMURLPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C73CA301CE5645D0008F59F /* YMURLPattern.m */; };
+		3C73CA361CE56B230008F59F /* YMTelPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C73CA351CE56B230008F59F /* YMTelPattern.m */; };
+		3C73CA371CE56B230008F59F /* YMTelPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C73CA351CE56B230008F59F /* YMTelPattern.m */; };
+		3C73CA381CE56B230008F59F /* YMTelPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C73CA351CE56B230008F59F /* YMTelPattern.m */; };
 		3C76A4071CE187120084DB90 /* YMPatternResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C76A4061CE187120084DB90 /* YMPatternResults.m */; };
 		3C76A4081CE187120084DB90 /* YMPatternResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C76A4061CE187120084DB90 /* YMPatternResults.m */; };
 		3C76A4091CE187120084DB90 /* YMPatternResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C76A4061CE187120084DB90 /* YMPatternResults.m */; };
@@ -612,6 +618,10 @@
 		3C5F663C1CE487EB00BC4F98 /* UIView+ContentEdgetInsets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ContentEdgetInsets.h"; sourceTree = "<group>"; };
 		3C5F663D1CE487EB00BC4F98 /* UIView+ContentEdgetInsets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ContentEdgetInsets.m"; sourceTree = "<group>"; };
 		3C5F663E1CE487EB00BC4F98 /* YMRTPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMRTPattern.h; sourceTree = "<group>"; };
+		3C73CA2F1CE5645D0008F59F /* YMURLPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMURLPattern.h; sourceTree = "<group>"; };
+		3C73CA301CE5645D0008F59F /* YMURLPattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMURLPattern.m; sourceTree = "<group>"; };
+		3C73CA341CE56B230008F59F /* YMTelPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMTelPattern.h; sourceTree = "<group>"; };
+		3C73CA351CE56B230008F59F /* YMTelPattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMTelPattern.m; sourceTree = "<group>"; };
 		3C76A4051CE187120084DB90 /* YMPatternResults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMPatternResults.h; sourceTree = "<group>"; };
 		3C76A4061CE187120084DB90 /* YMPatternResults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMPatternResults.m; sourceTree = "<group>"; };
 		3C76A4231CE1ADA20084DB90 /* RegularExperssionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegularExperssionTests.m; sourceTree = "<group>"; };
@@ -853,6 +863,10 @@
 				3C5F662E1CE487EB00BC4F98 /* YMRichMapMarkProtocol.h */,
 				3C5F662F1CE487EB00BC4F98 /* YMRichTextPattern.h */,
 				3C5F66301CE487EB00BC4F98 /* YMRichTextPattern.m */,
+				3C73CA2F1CE5645D0008F59F /* YMURLPattern.h */,
+				3C73CA301CE5645D0008F59F /* YMURLPattern.m */,
+				3C73CA341CE56B230008F59F /* YMTelPattern.h */,
+				3C73CA351CE56B230008F59F /* YMTelPattern.m */,
 			);
 			path = YMRichTextPattern;
 			sourceTree = "<group>";
@@ -1770,12 +1784,14 @@
 			files = (
 				3C76A4071CE187120084DB90 /* YMPatternResults.m in Sources */,
 				3C5F66571CE487EB00BC4F98 /* NSTextAttachment+YMRTPattern.m in Sources */,
+				3C73CA361CE56B230008F59F /* YMTelPattern.m in Sources */,
 				3C9F05021CE069A1004F7B4D /* Swizzling.m in Sources */,
 				3C5F664B1CE487EB00BC4F98 /* YMImagePattern.m in Sources */,
 				3C5F665D1CE487EB00BC4F98 /* UITextView+RichText.m in Sources */,
 				3C5F663F1CE487EB00BC4F98 /* YMEmojAttachement.m in Sources */,
 				3C9F04CA1CE05385004F7B4D /* ViewController.m in Sources */,
 				3C5F664E1CE487EB00BC4F98 /* YMRichTextPattern.m in Sources */,
+				3C73CA311CE5645D0008F59F /* YMURLPattern.m in Sources */,
 				3C5F66601CE487EB00BC4F98 /* UIView+ContentEdgetInsets.m in Sources */,
 				3C9F04C71CE05385004F7B4D /* AppDelegate.m in Sources */,
 				3C5F66451CE487EB00BC4F98 /* YMOtherAttachement.m in Sources */,
@@ -1799,6 +1815,7 @@
 				3C76A4241CE1ADA20084DB90 /* RegularExperssionTests.m in Sources */,
 				3C5F665E1CE487EB00BC4F98 /* UITextView+RichText.m in Sources */,
 				3C9F05031CE069A1004F7B4D /* Swizzling.m in Sources */,
+				3C73CA371CE56B230008F59F /* YMTelPattern.m in Sources */,
 				3C9F050E1CE09305004F7B4D /* YMRichTextView.m in Sources */,
 				3C5F66461CE487EB00BC4F98 /* YMOtherAttachement.m in Sources */,
 				3C5F66581CE487EB00BC4F98 /* NSTextAttachment+YMRTPattern.m in Sources */,
@@ -1809,6 +1826,7 @@
 				3C5F66431CE487EB00BC4F98 /* YMImageAttachement.m in Sources */,
 				3C5F664C1CE487EB00BC4F98 /* YMImagePattern.m in Sources */,
 				3C5F66551CE487EB00BC4F98 /* NSString+YMRTPattern.m in Sources */,
+				3C73CA321CE5645D0008F59F /* YMURLPattern.m in Sources */,
 				3C5F66491CE487EB00BC4F98 /* YMEmojPattern.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1819,9 +1837,11 @@
 			files = (
 				3C76A4091CE187120084DB90 /* YMPatternResults.m in Sources */,
 				3C5F664A1CE487EB00BC4F98 /* YMEmojPattern.m in Sources */,
+				3C73CA331CE5645D0008F59F /* YMURLPattern.m in Sources */,
 				3C5F665F1CE487EB00BC4F98 /* UITextView+RichText.m in Sources */,
 				3C5F66561CE487EB00BC4F98 /* NSString+YMRTPattern.m in Sources */,
 				3C5F66621CE487EB00BC4F98 /* UIView+ContentEdgetInsets.m in Sources */,
+				3C73CA381CE56B230008F59F /* YMTelPattern.m in Sources */,
 				3C5F664D1CE487EB00BC4F98 /* YMImagePattern.m in Sources */,
 				3C5F66501CE487EB00BC4F98 /* YMRichTextPattern.m in Sources */,
 				3C5F66471CE487EB00BC4F98 /* YMOtherAttachement.m in Sources */,

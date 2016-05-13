@@ -16,6 +16,7 @@
     self = [super init];
     if (self) {
         self.regular = @"(<image [\\S\\s]+>)";
+        self.patternType = YMRichPatternWithAttachement;
     }
     return self;
 }

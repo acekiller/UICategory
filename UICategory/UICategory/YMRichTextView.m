@@ -34,7 +34,8 @@
     YMOtherAttachement *attachement = [[YMOtherAttachement alloc] initWithFilePath:filepath];
     NSAttributedString *attachementString = [NSAttributedString attributedStringWithAttachment:attachement];
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];
-    [attributedString insertAttributedString:attachementString atIndex:self.attributedText.length];
+    [attributedString insertAttributedString:attachementString
+                                     atIndex:self.attributedText.length];
     
     self.attributedText = attributedString;
     self.selectedRange = NSMakeRange(range.location + 1, 0);
@@ -50,7 +51,8 @@
     YMOtherAttachement *attachement = [[YMOtherAttachement alloc] initWithFilePath:filepath];
     NSAttributedString *attachementString = [NSAttributedString attributedStringWithAttachment:attachement];
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];
-    [attributedString insertAttributedString:attachementString atIndex:self.attributedText.length];
+    [attributedString insertAttributedString:attachementString
+                                     atIndex:self.attributedText.length];
     
     self.attributedText = attributedString;
     self.selectedRange = NSMakeRange(self.selectedRange.location + 1, self.selectedRange.length);
@@ -65,7 +67,8 @@
     YMImageAttachement *attachement = [[YMImageAttachement alloc] initWithImage:image];
     NSAttributedString *attachementString = [NSAttributedString attributedStringWithAttachment:attachement];
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];
-    [attributedString insertAttributedString:attachementString atIndex:self.selectedRange.location];
+    [attributedString insertAttributedString:attachementString
+                                     atIndex:self.selectedRange.location];
     self.attributedText = attributedString;
     self.selectedRange = NSMakeRange(self.selectedRange.location + 1, self.selectedRange.length);
 }
@@ -75,7 +78,8 @@
     YMImageAttachement *attachement = [[YMImageAttachement alloc] initWithImage:image];
     NSAttributedString *attachementString = [NSAttributedString attributedStringWithAttachment:attachement];
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];
-    [attributedString insertAttributedString:attachementString atIndex:self.attributedText.length];
+    [attributedString insertAttributedString:attachementString
+                                     atIndex:self.attributedText.length];
     self.attributedText = attributedString;
     self.selectedRange = NSMakeRange(self.selectedRange.location + 1, self.selectedRange.length);
 }
