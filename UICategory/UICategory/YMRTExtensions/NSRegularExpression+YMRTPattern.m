@@ -12,7 +12,9 @@
 
 - (NSArray *)matchesResults:(NSString *)string
 {
-    NSArray *results = [self matchesInString:string options:NSMatchingWithTransparentBounds range:NSMakeRange(0, [string length])];
+    NSArray *results = [self matchesInString:string
+                                     options:NSMatchingWithTransparentBounds
+                                       range:NSMakeRange(0, [string length])];
     
     return results;
 }

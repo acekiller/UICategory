@@ -39,9 +39,40 @@
     return [NSAttributedString class];
 }
 
-- (NSString *)formatResourceAdjustString:(NSString *)result
+- (YMPatternResults *)patternResultStringFromString:(NSString *)string
+                                        checkResult:(NSTextCheckingResult *)checkResult
 {
-    return @"";
+    YMPatternResults *result = [[YMPatternResults alloc] init];
+    result.range = checkResult.range;
+    result.result = [string substringWithRange:checkResult.range];
+    result.params = [self styleParams:result.result];
+    result.showString = [self showString:result.result];
+    result.attributeString = [self attributeString:result];
+    
+    return result;
 }
+
+- (NSAttributedString *)attributeString:(YMPatternResults *)result {
+    if (YMRichPatternWithAttachement == self.patternType) {
+        return [NSAttributedString attributedStringWithAttachment:[self attachementWithPatten:result]];
+    } else if (YMRichPatternWithAttribute == self.patternType) {
+        return [self richTextParamsParserString:result];
+    }
+    return [[NSAttributedString alloc] init];
+}
+
+- (NSAttributedString *)richTextParamsParserString:(YMPatternResults *)result
+{
+    return [[[self styleParamsParserClass] alloc] initWithString:[result showString]
+                                                      attributes:[result params]];
+}
+
+- (NSTextAttachment *)attachementWithPatten:(YMPatternResults *)result
+{
+    NSTextAttachment *attachement = [[[self attachementClass] alloc] init];
+    [attachement setPatternResult:result];
+    return attachement;
+}
+
 
 @end

@@ -12,10 +12,13 @@
 
 - (void)setPatternResult:(YMPatternResults *)result
 {
-    self.image = [UIImage imageNamed:result.formatUseName];
+    self.image = [UIImage imageNamed:result.showString];
 }
 
-- (CGRect)attachmentBoundsForTextContainer:(NSTextContainer *)textContainer proposedLineFragment:(CGRect)lineFrag glyphPosition:(CGPoint)position characterIndex:(NSUInteger)charIndex
+- (CGRect)attachmentBoundsForTextContainer:(NSTextContainer *)textContainer
+                      proposedLineFragment:(CGRect)lineFrag
+                             glyphPosition:(CGPoint)position
+                            characterIndex:(NSUInteger)charIndex
 {
     return CGRectMake(0.f, 0.f, 15.f, 15.f);
 }

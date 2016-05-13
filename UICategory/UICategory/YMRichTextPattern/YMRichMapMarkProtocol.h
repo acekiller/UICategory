@@ -17,11 +17,20 @@
 
 @property (nonatomic, assign) YMRichPatternType patternType;
 
+/**
+ *  用于从匹配到的数据中解析NSAttributedString对象的参数。
+ *
+ */
 - (NSDictionary *)styleParams:(NSString *)result;
 
+/**
+ *  用于从匹配到的数据中解析出用于显示或获取到显示模型的数据。
+ *
+ */
 - (NSString *)showString:(NSString *)result;
 
-- (NSString *)formatResourceAdjustString:(NSString *)result;
+- (YMPatternResults *)patternResultStringFromString:(NSString *)string
+                                        checkResult:(NSTextCheckingResult *)checkResult;
 
 #pragma mark --Attachement Method
 /**
