@@ -20,9 +20,18 @@
     return self;
 }
 
-- (Class)styleParamsParserClass
+- (NSDictionary *)styleParams:(NSString *)result
 {
-    return [NSAttributedString class];
+    return @{
+             NSForegroundColorAttributeName : [UIColor blueColor],
+             NSUnderlineStyleAttributeName : @(NSUnderlineStyleSingle),
+             @"url" : [result copy],
+             };
+}
+
+- (NSString *)showString:(NSString *)result
+{
+    return result;
 }
 
 @end

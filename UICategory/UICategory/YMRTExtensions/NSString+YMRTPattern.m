@@ -53,6 +53,16 @@ static NSMutableArray *patternModels;
     return rexFilterResult;
 }
 
+- (NSArray <YMPatternResults *>* )patternResultWithPatterns:(NSArray <id<YMRichMapMarkProtocol>> *)patterns {
+    NSMutableArray *patternResults = [[NSMutableArray alloc] init];
+    
+    for (id<YMRichMapMarkProtocol> pattern in patterns) {
+        [patternResults addObjectsFromArray:[self patternResultWithPattern:pattern]];
+    }
+    
+    return patternResults;
+}
+
 - (NSMutableAttributedString *)mutableAttributedStringWithAllRegisterPattern
 {
     return [self mutableAttributedStringWithPattens:[self registerPatterns]];
@@ -62,18 +72,18 @@ static NSMutableArray *patternModels;
 {
     NSMutableAttributedString *attr = [[NSMutableAttributedString alloc] initWithString:self];
     
-    for (id<YMRichMapMarkProtocol> pattern in richTextMarkMaps) {
-        NSMutableString *str = [[NSMutableString alloc] initWithString:attr.string];
-        NSArray *patternResults = [str patternResultWithPattern:pattern];
-        for (NSInteger i = [patternResults count] - 1; i >= 0; i--) {
-            YMPatternResults *result = patternResults[i];
-            NSAttributedString *attrStr = result.attributeString;
-            if (!attrStr) {
-                continue;
-            }
-            [attr replaceCharactersInRange:[result range]
-                      withAttributedString:result.attributeString];
+    NSMutableString *str = [[NSMutableString alloc] initWithString:self];
+    
+    NSArray *patternResults = [str patternResultWithPatterns:richTextMarkMaps];
+    
+    for (NSInteger i = [patternResults count] - 1; i >= 0; i--) {
+        YMPatternResults *result = patternResults[i];
+        NSAttributedString *attrStr = result.attributeString;
+        if (!attrStr) {
+            continue;
         }
+        [attr replaceCharactersInRange:[result range]
+                  withAttributedString:result.attributeString];
     }
     return attr;
 }

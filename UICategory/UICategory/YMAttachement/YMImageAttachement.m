@@ -31,7 +31,7 @@
 
 - (CGRect)attachmentBoundsForTextContainer:(NSTextContainer *)textContainer proposedLineFragment:(CGRect)lineFrag glyphPosition:(CGPoint)position characterIndex:(NSUInteger)charIndex
 {
-    return CGRectMake(0.f, 0.f, 15.f, 15.f);
+    return CGRectMake(0.f, 0.f, 30.f, 30.f);
 }
 
 @end

@@ -12,5 +12,6 @@
 #import "YMEmojPattern.h"
 #import "YMImagePattern.h"
 #import "YMTelPattern.h"
+#import "YMURLPattern.h"
 
 #endif /* YMRTPattern_h */

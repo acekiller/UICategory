@@ -11,14 +11,19 @@
 
 @implementation YMEmojPattern
 
-- (instancetype) init
+- (instancetype) initWithFont:(UIFont *)font
 {
-    self = [super init];
+    self = [super initWithFont:font];
     if (self) {
         self.regular = @"(\\[[a-zA-Z0-9\u4E00-\u9FA5_]{0,}\\])";
         self.patternType = YMRichPatternWithAttachement;
     }
     return self;
+}
+
+- (instancetype) init
+{
+    return [self initWithFont:nil];
 }
 
 - (Class)attachementClass

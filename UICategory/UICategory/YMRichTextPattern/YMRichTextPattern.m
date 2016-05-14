@@ -7,13 +7,47 @@
 //
 
 #import "YMRichTextPattern.h"
-#import <UIKit/NSTextAttachment.h>
 #import "NSTextAttachment+YMRTPattern.h"
 #import "NSString+YMRTPattern.h"
 
+@interface YMRichTextPattern ()
+@property (nonatomic, assign) id <YMRichTextConfigProtocol> delegate;
+@end
+
 @implementation YMRichTextPattern
 
-@synthesize regular=_regular,patternType=_patternType;
+@synthesize regular=_regular,patternType=_patternType,font=_font;
+@synthesize delegate=_delegate,tapHandler=_tapHandler;
+
+- (instancetype) initWithFont:(UIFont *)font
+                     delegate:(id<YMRichTextConfigProtocol>)delegate
+{
+    self = [super init];
+    if (self) {
+        self.delegate = delegate;
+        self.font = font ? font : [UIFont systemFontOfSize:15.f];
+        self.regular = @"";
+        self.patternType = YMRichPatternWithAttribute;
+    }
+    return self;
+}
+
+- (instancetype) initWithFont:(UIFont *)font
+{
+    return [self initWithFont:font
+                     delegate:nil];
+}
+
+- (instancetype) initWithDelegate:(id <YMRichTextConfigProtocol>)delegate
+{
+    return [self initWithFont:[UIFont systemFontOfSize:15.f]
+                     delegate:delegate];
+}
+
+- (instancetype) init
+{
+    return [self initWithDelegate:nil];
+}
 
 #pragma mark --Attribute Metthod
 
@@ -34,11 +68,6 @@
     return [NSTextAttachment class];
 }
 
-- (Class)styleParamsParserClass
-{
-    return [NSAttributedString class];
-}
-
 - (YMPatternResults *)patternResultStringFromString:(NSString *)string
                                         checkResult:(NSTextCheckingResult *)checkResult
 {
@@ -47,6 +76,9 @@
     result.result = [string substringWithRange:checkResult.range];
     result.params = [self styleParams:result.result];
     result.showString = [self showString:result.result];
+    result.font = self.font;
+    result.tapHandler = self.tapHandler;
+    
     result.attributeString = [self attributeString:result];
     
     return result;
@@ -63,7 +95,7 @@
 
 - (NSAttributedString *)richTextParamsParserString:(YMPatternResults *)result
 {
-    return [[[self styleParamsParserClass] alloc] initWithString:[result showString]
+    return [[NSAttributedString alloc] initWithString:[result showString]
                                                       attributes:[result params]];
 }
 

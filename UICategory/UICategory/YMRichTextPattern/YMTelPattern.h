@@ -7,7 +7,6 @@
 //
 
 #import "YMRichTextPattern.h"
-#import <UIKit/UIKit.h>
 
 @interface YMTelPattern : YMRichTextPattern
 

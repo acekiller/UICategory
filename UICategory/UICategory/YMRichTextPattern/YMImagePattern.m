@@ -26,4 +26,12 @@
     return [YMImageAttachement class];
 }
 
+- (NSString *)showString:(NSString *)result
+{
+    NSMutableString *emojName = [result mutableCopy];
+    [emojName replaceCharactersInRange:NSMakeRange(0, 7) withString:@""];
+    [emojName replaceCharactersInRange:NSMakeRange([emojName length] - 1, 1) withString:@""];
+    return emojName;
+}
+
 @end

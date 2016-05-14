@@ -14,7 +14,7 @@
 
 + (void)registerPatternParserModel:(id<YMRichMapMarkProtocol>)model;
 
-- (NSArray *)registerPatterns;
+- (NSArray <id<YMRichMapMarkProtocol>> *)registerPatterns;
 
 - (NSArray <YMPatternResults *>* )patternResultWithPattern:(id<YMRichMapMarkProtocol>)pattern;
 

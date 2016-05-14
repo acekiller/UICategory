@@ -20,11 +20,6 @@
     return self;
 }
 
-- (Class)styleParamsParserClass
-{
-    return [NSAttributedString class];
-}
-
 - (NSDictionary *)styleParams:(NSString *)result
 {
     return @{
