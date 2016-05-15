@@ -16,7 +16,11 @@
 
 - (void)setPatternResult:(YMPatternResults *)result
 {
-    self.image = [UIImage imageNamed:result.showString];
+    if (result.directory) {
+        self.image = [UIImage imageWithContentsOfFile:[[result directory] stringByAppendingPathComponent:result.showString]];
+    } else {
+        self.image = [UIImage imageNamed:result.showString];
+    }
     self.font = result.font;
 }
 

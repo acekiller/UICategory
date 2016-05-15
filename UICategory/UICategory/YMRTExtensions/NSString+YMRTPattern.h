@@ -6,7 +6,7 @@
 //  Copyright © 2016 goappbox. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 @class YMPatternResults;
 @protocol YMRichMapMarkProtocol;
 
@@ -21,5 +21,7 @@
 - (NSMutableAttributedString *)mutableAttributedStringWithAllRegisterPattern;
 
 - (NSMutableAttributedString *)mutableAttributedStringWithPattens:(NSArray *)richTextMarkMaps;
+
+- (NSMutableAttributedString *)mutableAttributedStringWithPattens:(NSArray *)richTextMarkMaps font:(UIFont *)font;
 
 @end

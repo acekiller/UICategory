@@ -13,7 +13,8 @@
     YMRichMapMarkProtocol
 >
 
-- (instancetype) initWithFont:(UIFont *)font
-                     delegate:(id<YMRichTextConfigProtocol>)delegate NS_DESIGNATED_INITIALIZER;
+- (instancetype) initWithResourceDiretory:(NSString *)directory
+                                     font:(UIFont *)font
+                                 delegate:(id<YMRichTextConfigProtocol>)delegate NS_DESIGNATED_INITIALIZER;
 
 @end

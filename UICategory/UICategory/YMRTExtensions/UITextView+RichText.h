@@ -6,7 +6,7 @@
 //  Copyright © 2016 goappbox. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "YMRichMapMarkProtocol.h"
 
 @interface UITextView (RichText)
 
@@ -21,5 +21,7 @@
 - (void)addImage:(UIImage *)image;
 
 - (void)addSeprateLine;
+
+- (void)addPattern:(id<YMRichMapMarkProtocol>)pattern;
 
 @end

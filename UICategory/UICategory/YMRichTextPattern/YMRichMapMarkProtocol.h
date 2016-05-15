@@ -19,7 +19,9 @@
 
 @property (nonatomic, assign) YMRichPatternType patternType;
 
-@property (nonatomic, assign, readonly) id <YMRichTextConfigProtocol> delegate;
+@property (nonatomic, assign) id <YMRichTextConfigProtocol> delegate;
+
+@property (nonatomic, strong) NSString *directory;
 
 @property (nonatomic, strong) UIFont *font;
 
@@ -31,6 +33,8 @@
 - (instancetype) initWithFont:(UIFont *)font;
 
 - (instancetype) initWithDelegate:(id <YMRichTextConfigProtocol>)delegate;
+
+- (instancetype) initWithResourceDiretory:(NSString *)directory font:(UIFont *)font delegate:(id<YMRichTextConfigProtocol>)delegate;
 
 /**
  *  用于从匹配到的数据中解析NSAttributedString对象的参数。
@@ -46,6 +50,10 @@
 
 - (YMPatternResults *)patternResultStringFromString:(NSString *)string
                                         checkResult:(NSTextCheckingResult *)checkResult;
+
+- (YMPatternResults *)patternResultStringFromString:(NSString *)string
+                                        checkResult:(NSTextCheckingResult *)checkResult
+                                               font:(UIFont *)font;
 
 #pragma mark --Attachement Method
 /**

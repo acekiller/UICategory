@@ -8,6 +8,10 @@
 
 #import "YMImageAttachement.h"
 
+@interface YMImageAttachement ()
+@property (nonatomic, assign) CGSize size;
+@end
+
 @implementation YMImageAttachement
 
 - (instancetype) initWithFilePath:(NSString *)filepath
@@ -27,11 +31,16 @@
 - (void)setPatternResult:(YMPatternResults *)result
 {
     self.image = [UIImage imageNamed:result.showString];
+    NSDictionary *dic = [result params];
+    self.size = CGSizeMake([dic[@"width"] floatValue], [dic[@"height"] floatValue]);
 }
 
 - (CGRect)attachmentBoundsForTextContainer:(NSTextContainer *)textContainer proposedLineFragment:(CGRect)lineFrag glyphPosition:(CGPoint)position characterIndex:(NSUInteger)charIndex
 {
-    return CGRectMake(0.f, 0.f, 30.f, 30.f);
+    if (CGSizeEqualToSize(self.size, CGSizeZero)) {
+        return CGRectMake(0.f, 0.f, 15.f, 15.f);
+    }
+    return CGRectMake(0.f, 0.f, self.size.width, self.size.height);
 }
 
 @end

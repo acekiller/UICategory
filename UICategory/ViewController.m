@@ -89,24 +89,33 @@
     t.backgroundColor = [UIColor redColor];
     CGFloat ediSize = 10.f;
     t.cornerRadius = 5.f;
-    
-    [t addPattern:[[YMEmojPattern alloc] initWithFont:t.font]];
+    t.font = [UIFont systemFontOfSize:15.f];
+    [t addPattern:[[YMEmojPattern alloc] init]];
     [t addPattern:[[YMImagePattern alloc] init]];
     [t addPattern:[[YMTelPattern alloc] init]];
     [t addPattern:[[YMURLPattern alloc] init]];
     
-    t.text = @"测试[emoji_00],欢迎。[emoji_01],测试内容<image emoji_02>,哈哈[emoji_03],难啊。你猜猜，我猜猜，大家都不知道，这是怎么回事儿。那该咋办呢？3.2遗留：一个孩子的家长可以相互看到手机号。028-64566560。0817-8347866，0828-84343232。http://baidu.com/ats/user?acc=1iafas&txt=aadf%2E 好吗?";
+    t.text = @"测试[emoji_00],欢迎。[emoji_01],测试内容<image name:emoji_02 width:100 height:100>,哈哈[emoji_03],难啊。你猜猜，我猜猜，大家都不知道，这是怎么回事儿。那该咋办呢？3.2遗留：一个孩子的家长可以相互看到手机号。028-64566560。0817-8347866，0828-84343232。http://baidu.com/ats/user?acc=1iafas&txt=aadf%2E 好吗?";
     t.textContentEdgeInsets = UIEdgeInsetsMake(ediSize, ediSize, ediSize, ediSize);
+    [t setUserInteractionEnabled:YES];
     [t sizeToFit];
 }
 
 - (void) testRichTextView
 {
-    UITextView *rt = [[UITextView alloc] initWithFrame:CGRectZero];
+    UITextView *rt = [[UITextView alloc] initWithFrame:CGRectMake(10.f, 20.f, self.view.frame.size.width - 20.f, self.view.frame.size.height - 40.f)];
     rt.backgroundColor = [UIColor redColor];
-    rt.text = @"学习";
-    [rt addImage:[UIImage imageNamed:@"emoj_s_pressed"]];
+    [rt addPattern:[[YMEmojPattern alloc] init]];
+    [rt addPattern:[[YMImagePattern alloc] init]];
+    [rt addPattern:[[YMTelPattern alloc] init]];
+    [rt addPattern:[[YMURLPattern alloc] init]];
+//    rt.text = @"学习";
     [self.view addSubview:rt];
+    rt.text = @"测试[emoji_00],欢迎。[emoji_01],测试内容<image name:emoji_02 width:100 height:100>,哈哈[emoji_03],难啊。你猜猜，我猜猜，大家都不知道，这是怎么回事儿。那该咋办呢？3.2遗留：一个孩子的家长可以相互看到手机号。028-64566560。0817-8347866，0828-84343232。http://baidu.com/ats/user?acc=1iafas&txt=aadf%2E 好吗?";
+    
+    [rt addImage:[UIImage imageNamed:@"emoj_s_pressed"]];
+    
+    [rt sizeToFit];
 }
 
 @end

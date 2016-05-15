@@ -11,16 +11,15 @@
 #import "NSString+YMRTPattern.h"
 
 @interface YMRichTextPattern ()
-@property (nonatomic, assign) id <YMRichTextConfigProtocol> delegate;
+
 @end
 
 @implementation YMRichTextPattern
 
-@synthesize regular=_regular,patternType=_patternType,font=_font;
+@synthesize regular=_regular,patternType=_patternType,font=_font, directory=_directory;
 @synthesize delegate=_delegate,tapHandler=_tapHandler;
 
-- (instancetype) initWithFont:(UIFont *)font
-                     delegate:(id<YMRichTextConfigProtocol>)delegate
+- (instancetype) initWithResourceDiretory:(NSString *)directory font:(UIFont *)font delegate:(id<YMRichTextConfigProtocol>)delegate
 {
     self = [super init];
     if (self) {
@@ -30,6 +29,12 @@
         self.patternType = YMRichPatternWithAttribute;
     }
     return self;
+}
+
+- (instancetype) initWithFont:(UIFont *)font
+                     delegate:(id<YMRichTextConfigProtocol>)delegate
+{
+    return [self initWithResourceDiretory:nil font:font delegate:delegate];
 }
 
 - (instancetype) initWithFont:(UIFont *)font
@@ -77,6 +82,24 @@
     result.params = [self styleParams:result.result];
     result.showString = [self showString:result.result];
     result.font = self.font;
+    result.tapHandler = self.tapHandler;
+    
+    result.attributeString = [self attributeString:result];
+    
+    return result;
+}
+
+- (YMPatternResults *)patternResultStringFromString:(NSString *)string
+                                        checkResult:(NSTextCheckingResult *)checkResult
+                                               font:(UIFont *)font
+{
+    YMPatternResults *result = [[YMPatternResults alloc] init];
+    result.range = checkResult.range;
+    result.result = [string substringWithRange:checkResult.range];
+    result.params = [self styleParams:result.result];
+    result.showString = [self showString:result.result];
+    result.directory = self.directory;
+    result.font = font ? font : self.font;
     result.tapHandler = self.tapHandler;
     
     result.attributeString = [self attributeString:result];

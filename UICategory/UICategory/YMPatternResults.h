@@ -25,6 +25,8 @@
 
 @property (nonatomic, copy) void(^tapHandler)(NSDictionary *attributes);
 
+@property (nonatomic, strong) NSString *directory;
+
 /**
  *  从匹配到的数据解析出来的配置参数。用于设置到NSAttributedString对象的参数。数据的解析由YMRichMapMarkProtocol协议中的- (NSDictionary *)styleParams:(NSString *)result;方法来实现。
  */

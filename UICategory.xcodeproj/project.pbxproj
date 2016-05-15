@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3C20542A1CE33E80008693AA /* emoj_s_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C2054291CE33E80008693AA /* emoj_s_pressed@2x.png */; };
-		3C20542B1CE33E80008693AA /* emoj_s_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C2054291CE33E80008693AA /* emoj_s_pressed@2x.png */; };
-		3C20542C1CE33E80008693AA /* emoj_s_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C2054291CE33E80008693AA /* emoj_s_pressed@2x.png */; };
 		3C5F663F1CE487EB00BC4F98 /* YMEmojAttachement.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F66241CE487EB00BC4F98 /* YMEmojAttachement.m */; };
 		3C5F66401CE487EB00BC4F98 /* YMEmojAttachement.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F66241CE487EB00BC4F98 /* YMEmojAttachement.m */; };
 		3C5F66411CE487EB00BC4F98 /* YMEmojAttachement.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F66241CE487EB00BC4F98 /* YMEmojAttachement.m */; };
@@ -591,7 +588,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3C2054291CE33E80008693AA /* emoj_s_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "emoj_s_pressed@2x.png"; sourceTree = "<group>"; };
 		3C5F66231CE487EB00BC4F98 /* YMEmojAttachement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMEmojAttachement.h; sourceTree = "<group>"; };
 		3C5F66241CE487EB00BC4F98 /* YMEmojAttachement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMEmojAttachement.m; sourceTree = "<group>"; };
 		3C5F66251CE487EB00BC4F98 /* YMImageAttachement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMImageAttachement.h; sourceTree = "<group>"; };
@@ -1116,7 +1112,6 @@
 			children = (
 				3C9F04DC1CE05385004F7B4D /* UICategoryTests.m */,
 				3C9F04DE1CE05385004F7B4D /* Info.plist */,
-				3C2054291CE33E80008693AA /* emoj_s_pressed@2x.png */,
 				3C76A4231CE1ADA20084DB90 /* RegularExperssionTests.m */,
 			);
 			path = UICategoryTests;
@@ -1379,7 +1374,6 @@
 				3C76A5481CE1CECF0084DB90 /* emoji_123@2x.png in Resources */,
 				3C76A5721CE1CECF0084DB90 /* emoji_136@2x.png in Resources */,
 				3C76A6681CE1CECF0084DB90 /* emoji_70@2x.png in Resources */,
-				3C20542A1CE33E80008693AA /* emoj_s_pressed@2x.png in Resources */,
 				3C76A61A1CE1CECF0084DB90 /* emoji_44@2x.png in Resources */,
 				3C76A4FD1CE1CECF0084DB90 /* emoji_100@2x.png in Resources */,
 				3C76A5451CE1CECF0084DB90 /* emoji_122@2x.png in Resources */,
@@ -1521,7 +1515,6 @@
 				3C76A5881CE1CECF0084DB90 /* emoji_142@2x.png in Resources */,
 				3C76A5941CE1CECF0084DB90 /* emoji_146@2x.png in Resources */,
 				3C76A5CA1CE1CECF0084DB90 /* emoji_18@2x.png in Resources */,
-				3C20542B1CE33E80008693AA /* emoj_s_pressed@2x.png in Resources */,
 				3C76A5401CE1CECF0084DB90 /* emoji_120@2x.png in Resources */,
 				3C76A5E81CE1CECF0084DB90 /* emoji_27@2x.png in Resources */,
 				3C76A6751CE1CECF0084DB90 /* emoji_74@2x.png in Resources */,
@@ -1696,7 +1689,6 @@
 				3C76A5891CE1CECF0084DB90 /* emoji_142@2x.png in Resources */,
 				3C76A5951CE1CECF0084DB90 /* emoji_146@2x.png in Resources */,
 				3C76A5CB1CE1CECF0084DB90 /* emoji_18@2x.png in Resources */,
-				3C20542C1CE33E80008693AA /* emoj_s_pressed@2x.png in Resources */,
 				3C76A5411CE1CECF0084DB90 /* emoji_120@2x.png in Resources */,
 				3C76A5E91CE1CECF0084DB90 /* emoji_27@2x.png in Resources */,
 				3C76A6761CE1CECF0084DB90 /* emoji_74@2x.png in Resources */,
