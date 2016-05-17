@@ -124,16 +124,6 @@
     return self.layer.cornerRadius;
 }
 
-//- (void) setEmojiTextMapper:(NSDictionary *)emojiTextMapper
-//{
-//    [textParser setEmojiTextMapper:emojiTextMapper];
-//}
-//
-//- (void) setHyperlinkMapper:(NSDictionary *)hyperlinkMapper
-//{
-//    [textParser setHyperlinkMapper:hyperlinkMapper];
-//}
-
 #pragma mark -
 - (void)addPattern:(id<YMLabelTextPatternProtocol>)pattern
 {
@@ -144,7 +134,6 @@
 
 - (void)drawRect: (CGRect)rect
 {
-    NSLog(@"%s",__PRETTY_FUNCTION__);
     if (self.attributedText == nil || [self.attributedText length] <= 0) {
         return;
     }
@@ -165,7 +154,6 @@
     _frame = frame;
     
     CTFrameDraw(_frame, ctx);
-    //遍历文本行以及CTRunRef，将表情文本对应的表情图片绘制到图形上下文
     
     [attachementsRender renderAttachementsToContext:ctx toLabel:self frame:frame];
     
@@ -226,7 +214,7 @@
         
         if (CGRectContainsPoint(rect, point)) {
             // 将点击的坐标转化为相对于当前行的坐标
-            CGPoint relativePoint = CGPointMake(point.x - CGRectGetMinX(rect) - self.textContainerInsets.left, CGRectGetMinY(rect) + self.textContainerInsets.top);
+            CGPoint relativePoint = CGPointMake(point.x - CGRectGetMinX(rect) - self.textContainerInsets.left, CGRectGetMinY(rect) + self.lineFragmentPadding);
             // 获取当前点击坐标对应的字符串偏移量
             CFIndex idx = CTLineGetStringIndexForPosition(line, relativePoint);
             // 判断偏移量是否在链接列表中
@@ -256,6 +244,44 @@
                                  inRange:range];
         }
     }];
+}
+
+- (CGSize)sizeThatFits:(CGSize)size
+{
+    if (self.attributedText == nil) {
+        return CGSizeMake(self.textContainerInsets.left + self.textContainerInsets.right, self.textContainerInsets.top + self.textContainerInsets.bottom);
+    }
+    
+    CTFramesetterRef framesetter = CTFramesetterCreateWithAttributedString((CFAttributedStringRef)self.attributedText);
+    CGMutablePathRef paths = CGPathCreateMutable();
+    
+    CGPathAddRect(paths, NULL, CGRectMake(self.textContainerInsets.left, self.textContainerInsets.top, size.width - (self.textContainerInsets.left + self.textContainerInsets.right), size.height));
+    
+    CTFrameRef frame = CTFramesetterCreateFrame(framesetter, CFRangeMake(0, self.attributedText.length), paths, NULL);
+    
+    CFArrayRef lines = CTFrameGetLines(frame);
+    if (!lines)
+        return CGSizeMake(self.textContainerInsets.left + self.textContainerInsets.right, self.textContainerInsets.top + self.textContainerInsets.bottom);
+    
+    CFIndex count = CFArrayGetCount(lines);
+    
+    CGPoint origins[count];
+    CTFrameGetLineOrigins(frame, CFRangeMake(0, 0), origins);
+    
+    // 翻转坐标系
+    CGAffineTransform transform = CGAffineTransformMakeTranslation(0, self.bounds.size.height);
+    transform = CGAffineTransformScale(transform, 1.0f, -1.0f);
+    
+    CGPoint linePoint = origins[count - 1];
+    
+    linePoint.x = linePoint.x + self.textContainerInsets.left;
+    
+    CTLineRef line = CFArrayGetValueAtIndex(lines, count - 1);
+    // 获得每一行的rect信息
+    CGRect flippedRect = [self getLineBounds:line point:linePoint];
+    CGRect rect = CGRectApplyAffineTransform(flippedRect, transform);
+    
+    return CGSizeMake(self.frame.size.width, rect.origin.y + self.textContainerInsets.bottom);
 }
 
 @end

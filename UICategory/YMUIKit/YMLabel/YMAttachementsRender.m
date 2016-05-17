@@ -28,6 +28,9 @@
 - (void)renderAttachementsToContext:(CGContextRef)context toLabel:(YMLabel *)label frame:(CTFrameRef)frame
 {
     [self.renderAttachmentMaps removeAllObjects];
+    
+    //遍历文本行以及CTRunRef，将表情文本对应的表情图片绘制到图形上下文
+    
     CFArrayRef lines = CTFrameGetLines(frame);
     CGPoint lineOrigins[CFArrayGetCount(lines)];
     CTFrameGetLineOrigins(frame, CFRangeMake(0, 0), lineOrigins);
