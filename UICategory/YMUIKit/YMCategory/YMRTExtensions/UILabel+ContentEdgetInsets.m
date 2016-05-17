@@ -7,7 +7,14 @@
 //
 
 #import "UILabel+ContentEdgetInsets.h"
-#import <objc/runtime.h>
+#import <CoreText/CoreText.h>
+#import "Swizzling.h"
+#import "NSString+YMRTPattern.h"
+
+////CTRun的回调，销毁内存的回调
+//void RunDelegateDeallocCallback( void* refCon ){
+//    
+//}
 
 @implementation UILabel (ContentEdgetInsets)
 

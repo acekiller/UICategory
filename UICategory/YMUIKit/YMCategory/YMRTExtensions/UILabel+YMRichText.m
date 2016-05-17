@@ -15,8 +15,8 @@
 
 + (void) load
 {
-    static dispatch_once_t swizzing_contentEdgetInsets_once;
-    dispatch_once(&swizzing_contentEdgetInsets_once, ^{
+    static dispatch_once_t swizzing_rich_text_once;
+    dispatch_once(&swizzing_rich_text_once, ^{
         swizzleSelector(self, @selector(sizeThatFits:), @selector(sizzing_sizeThatFits:));
         swizzleSelector(self, @selector(drawTextInRect:), @selector(swizzing_drawTextInRect:));
         swizzleSelector(self, @selector(setText:), @selector(swizzing_setText:));
