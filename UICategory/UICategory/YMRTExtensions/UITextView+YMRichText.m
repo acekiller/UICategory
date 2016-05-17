@@ -1,19 +1,19 @@
 //
-//  UITextView+RichText.m
+//  UITextView+YMRichText.m
 //  UICategory
 //
 //  Created by fengxijun on 5/11/16.
 //  Copyright © 2016 goappbox. All rights reserved.
 //
 
-#import "UITextView+RichText.h"
+#import "UITextView+YMRichText.h"
 #import <objc/runtime.h>
 #import "YMImageAttachement.h"
 #import "YMOtherAttachement.h"
 #import "NSString+YMRTPattern.h"
 #import "Swizzling.h"
 
-@implementation UITextView (RichText)
+@implementation UITextView (YMRichText)
 
 + (void) load
 {

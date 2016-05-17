@@ -7,10 +7,10 @@
 //
 
 #import "ViewController.h"
-#import "UILabel+ContentEdgetInsets.h"
+#import "UILabel+YMRichText.h"
 #import "YMRTPattern.h"
 #import "NSString+YMRTPattern.h"
-#import "UITextView+RichText.h"
+#import "UITextView+YMRichText.h"
 
 @interface ViewController ()
 

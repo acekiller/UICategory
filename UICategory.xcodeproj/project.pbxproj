@@ -37,9 +37,9 @@
 		3C5F665A1CE487EB00BC4F98 /* UILabel+ContentEdgetInsets.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F66391CE487EB00BC4F98 /* UILabel+ContentEdgetInsets.m */; };
 		3C5F665B1CE487EB00BC4F98 /* UILabel+ContentEdgetInsets.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F66391CE487EB00BC4F98 /* UILabel+ContentEdgetInsets.m */; };
 		3C5F665C1CE487EB00BC4F98 /* UILabel+ContentEdgetInsets.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F66391CE487EB00BC4F98 /* UILabel+ContentEdgetInsets.m */; };
-		3C5F665D1CE487EB00BC4F98 /* UITextView+RichText.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F663B1CE487EB00BC4F98 /* UITextView+RichText.m */; };
-		3C5F665E1CE487EB00BC4F98 /* UITextView+RichText.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F663B1CE487EB00BC4F98 /* UITextView+RichText.m */; };
-		3C5F665F1CE487EB00BC4F98 /* UITextView+RichText.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F663B1CE487EB00BC4F98 /* UITextView+RichText.m */; };
+		3C5F665D1CE487EB00BC4F98 /* UITextView+YMRichText.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F663B1CE487EB00BC4F98 /* UITextView+YMRichText.m */; };
+		3C5F665E1CE487EB00BC4F98 /* UITextView+YMRichText.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F663B1CE487EB00BC4F98 /* UITextView+YMRichText.m */; };
+		3C5F665F1CE487EB00BC4F98 /* UITextView+YMRichText.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F663B1CE487EB00BC4F98 /* UITextView+YMRichText.m */; };
 		3C5F66601CE487EB00BC4F98 /* UIView+ContentEdgetInsets.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F663D1CE487EB00BC4F98 /* UIView+ContentEdgetInsets.m */; };
 		3C5F66611CE487EB00BC4F98 /* UIView+ContentEdgetInsets.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F663D1CE487EB00BC4F98 /* UIView+ContentEdgetInsets.m */; };
 		3C5F66621CE487EB00BC4F98 /* UIView+ContentEdgetInsets.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5F663D1CE487EB00BC4F98 /* UIView+ContentEdgetInsets.m */; };
@@ -568,6 +568,9 @@
 		3C9F050D1CE09305004F7B4D /* YMRichTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F050C1CE09305004F7B4D /* YMRichTextView.m */; };
 		3C9F050E1CE09305004F7B4D /* YMRichTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F050C1CE09305004F7B4D /* YMRichTextView.m */; };
 		3C9F050F1CE09305004F7B4D /* YMRichTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F050C1CE09305004F7B4D /* YMRichTextView.m */; };
+		9AEAC7871CEA98CB0005F11F /* UILabel+YMRichText.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AEAC7861CEA98CB0005F11F /* UILabel+YMRichText.m */; };
+		9AEAC7881CEA98CB0005F11F /* UILabel+YMRichText.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AEAC7861CEA98CB0005F11F /* UILabel+YMRichText.m */; };
+		9AEAC7891CEA98CB0005F11F /* UILabel+YMRichText.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AEAC7861CEA98CB0005F11F /* UILabel+YMRichText.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -609,8 +612,8 @@
 		3C5F66371CE487EB00BC4F98 /* NSTextAttachment+YMRTPattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTextAttachment+YMRTPattern.m"; sourceTree = "<group>"; };
 		3C5F66381CE487EB00BC4F98 /* UILabel+ContentEdgetInsets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+ContentEdgetInsets.h"; sourceTree = "<group>"; };
 		3C5F66391CE487EB00BC4F98 /* UILabel+ContentEdgetInsets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+ContentEdgetInsets.m"; sourceTree = "<group>"; };
-		3C5F663A1CE487EB00BC4F98 /* UITextView+RichText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+RichText.h"; sourceTree = "<group>"; };
-		3C5F663B1CE487EB00BC4F98 /* UITextView+RichText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+RichText.m"; sourceTree = "<group>"; };
+		3C5F663A1CE487EB00BC4F98 /* UITextView+YMRichText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+YMRichText.h"; sourceTree = "<group>"; };
+		3C5F663B1CE487EB00BC4F98 /* UITextView+YMRichText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+YMRichText.m"; sourceTree = "<group>"; };
 		3C5F663C1CE487EB00BC4F98 /* UIView+ContentEdgetInsets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ContentEdgetInsets.h"; sourceTree = "<group>"; };
 		3C5F663D1CE487EB00BC4F98 /* UIView+ContentEdgetInsets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ContentEdgetInsets.m"; sourceTree = "<group>"; };
 		3C73CA2F1CE5645D0008F59F /* YMURLPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMURLPattern.h; sourceTree = "<group>"; };
@@ -809,6 +812,8 @@
 		3C9F050B1CE09305004F7B4D /* YMRichTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMRichTextView.h; sourceTree = "<group>"; };
 		3C9F050C1CE09305004F7B4D /* YMRichTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMRichTextView.m; sourceTree = "<group>"; };
 		9A8976E51CE7536F00E057C7 /* YMRTPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMRTPattern.h; sourceTree = "<group>"; };
+		9AEAC7851CEA98CB0005F11F /* UILabel+YMRichText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+YMRichText.h"; sourceTree = "<group>"; };
+		9AEAC7861CEA98CB0005F11F /* UILabel+YMRichText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+YMRichText.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -879,10 +884,12 @@
 				3C5F66371CE487EB00BC4F98 /* NSTextAttachment+YMRTPattern.m */,
 				3C5F66381CE487EB00BC4F98 /* UILabel+ContentEdgetInsets.h */,
 				3C5F66391CE487EB00BC4F98 /* UILabel+ContentEdgetInsets.m */,
-				3C5F663A1CE487EB00BC4F98 /* UITextView+RichText.h */,
-				3C5F663B1CE487EB00BC4F98 /* UITextView+RichText.m */,
+				3C5F663A1CE487EB00BC4F98 /* UITextView+YMRichText.h */,
+				3C5F663B1CE487EB00BC4F98 /* UITextView+YMRichText.m */,
 				3C5F663C1CE487EB00BC4F98 /* UIView+ContentEdgetInsets.h */,
 				3C5F663D1CE487EB00BC4F98 /* UIView+ContentEdgetInsets.m */,
+				9AEAC7851CEA98CB0005F11F /* UILabel+YMRichText.h */,
+				9AEAC7861CEA98CB0005F11F /* UILabel+YMRichText.m */,
 			);
 			path = YMRTExtensions;
 			sourceTree = "<group>";
@@ -1779,7 +1786,7 @@
 				3C73CA361CE56B230008F59F /* YMTelPattern.m in Sources */,
 				3C9F05021CE069A1004F7B4D /* Swizzling.m in Sources */,
 				3C5F664B1CE487EB00BC4F98 /* YMImagePattern.m in Sources */,
-				3C5F665D1CE487EB00BC4F98 /* UITextView+RichText.m in Sources */,
+				3C5F665D1CE487EB00BC4F98 /* UITextView+YMRichText.m in Sources */,
 				3C5F663F1CE487EB00BC4F98 /* YMEmojAttachement.m in Sources */,
 				3C9F04CA1CE05385004F7B4D /* ViewController.m in Sources */,
 				3C5F664E1CE487EB00BC4F98 /* YMRichTextPattern.m in Sources */,
@@ -1793,6 +1800,7 @@
 				3C5F66421CE487EB00BC4F98 /* YMImageAttachement.m in Sources */,
 				3C5F66511CE487EB00BC4F98 /* NSRegularExpression+YMRTPattern.m in Sources */,
 				3C5F66541CE487EB00BC4F98 /* NSString+YMRTPattern.m in Sources */,
+				9AEAC7871CEA98CB0005F11F /* UILabel+YMRichText.m in Sources */,
 				3C9F050D1CE09305004F7B4D /* YMRichTextView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1805,7 +1813,7 @@
 				3C5F664F1CE487EB00BC4F98 /* YMRichTextPattern.m in Sources */,
 				3C9F04DD1CE05385004F7B4D /* UICategoryTests.m in Sources */,
 				3C76A4241CE1ADA20084DB90 /* RegularExperssionTests.m in Sources */,
-				3C5F665E1CE487EB00BC4F98 /* UITextView+RichText.m in Sources */,
+				3C5F665E1CE487EB00BC4F98 /* UITextView+YMRichText.m in Sources */,
 				3C9F05031CE069A1004F7B4D /* Swizzling.m in Sources */,
 				3C73CA371CE56B230008F59F /* YMTelPattern.m in Sources */,
 				3C9F050E1CE09305004F7B4D /* YMRichTextView.m in Sources */,
@@ -1818,6 +1826,7 @@
 				3C5F66431CE487EB00BC4F98 /* YMImageAttachement.m in Sources */,
 				3C5F664C1CE487EB00BC4F98 /* YMImagePattern.m in Sources */,
 				3C5F66551CE487EB00BC4F98 /* NSString+YMRTPattern.m in Sources */,
+				9AEAC7881CEA98CB0005F11F /* UILabel+YMRichText.m in Sources */,
 				3C73CA321CE5645D0008F59F /* YMURLPattern.m in Sources */,
 				3C5F66491CE487EB00BC4F98 /* YMEmojPattern.m in Sources */,
 			);
@@ -1830,12 +1839,13 @@
 				3C76A4091CE187120084DB90 /* YMPatternResults.m in Sources */,
 				3C5F664A1CE487EB00BC4F98 /* YMEmojPattern.m in Sources */,
 				3C73CA331CE5645D0008F59F /* YMURLPattern.m in Sources */,
-				3C5F665F1CE487EB00BC4F98 /* UITextView+RichText.m in Sources */,
+				3C5F665F1CE487EB00BC4F98 /* UITextView+YMRichText.m in Sources */,
 				3C5F66561CE487EB00BC4F98 /* NSString+YMRTPattern.m in Sources */,
 				3C5F66621CE487EB00BC4F98 /* UIView+ContentEdgetInsets.m in Sources */,
 				3C73CA381CE56B230008F59F /* YMTelPattern.m in Sources */,
 				3C5F664D1CE487EB00BC4F98 /* YMImagePattern.m in Sources */,
 				3C5F66501CE487EB00BC4F98 /* YMRichTextPattern.m in Sources */,
+				9AEAC7891CEA98CB0005F11F /* UILabel+YMRichText.m in Sources */,
 				3C5F66471CE487EB00BC4F98 /* YMOtherAttachement.m in Sources */,
 				3C5F66411CE487EB00BC4F98 /* YMEmojAttachement.m in Sources */,
 				3C9F04E81CE05385004F7B4D /* UICategoryUITests.m in Sources */,
