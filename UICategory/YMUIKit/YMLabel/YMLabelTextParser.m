@@ -8,29 +8,16 @@
 
 #import "YMLabelTextParser.h"
 #import <CoreText/CoreText.h>
-
-void RunDelegateDeallocCallback(void * refCon)
-{
-}
-
-CGFloat RunDelegateGetAscentCallback(void * refCon)
-{
-    NSTextAttachment *attachement = (__bridge NSTextAttachment *)refCon;
-    return attachement.image.size.height;
-}
-CGFloat RunDelegateGetDescentCallback(void * refCon)
-{
-    //    NSTextAttachment *attachement = (__bridge NSTextAttachment *)refCon;
-    return 0;
-}
-CGFloat RunDelegateGetWidthCallback(void * refCon)
-{
-    NSTextAttachment *attachement = (__bridge NSTextAttachment *)refCon;
-    return attachement.image.size.width;
-}
+#import "YMLabelParamsConfig.h"
+#import "YMLabelAttributeString.h"
+#import "NSRegularExpression+YMRTPattern.h"
 
 @interface YMLabelTextParser ()
-@property (nonatomic, strong) NSMutableDictionary *textTouchMapper;
+@property (nonatomic, strong) NSMutableArray *linkRanges;
+@property (nonatomic, strong) NSAttributedString *attributedText;
+
+- (NSArray *) getAttributedStringsWithText:(NSString *)text pattern:(id<YMLabelTextPatternProtocol>)pattern;
+
 @end
 
 @implementation YMLabelTextParser
@@ -42,11 +29,10 @@ CGFloat RunDelegateGetWidthCallback(void * refCon)
 {
     self = [super init];
     if (self) {
+        self.linkRanges = [[NSMutableArray alloc] init];
+        _config = [[YMLabelParamsConfig alloc] init];
         defaultPatterns = [[NSMutableArray alloc] init];
-        self.paragraphStyle = [[NSMutableParagraphStyle alloc] init];
         [self loadDefaultParsers:type];
-        _textTouchMapper = [[NSMutableDictionary alloc] init];
-        self.textColor = [UIColor blackColor];
     }
     return self;
 }
@@ -81,71 +67,116 @@ CGFloat RunDelegateGetWidthCallback(void * refCon)
     [defaultPatterns removeAllObjects];
 }
 
-- (NSAttributedString *)parserText:(NSString *)text
+- (NSAttributedString *)parserText
 {
-    return [self parserText:text withParserPatterns:defaultPatterns];
+    return [self parserTextWithPatterns:defaultPatterns];
 }
 
-- (NSAttributedString *)parserText:(NSString *)text withParserPatterns:(NSArray *)patterns
+- (NSAttributedString *)parserTextWithPatterns:(NSArray *)patterns
 {
-    NSDictionary *attributes = @{NSForegroundColorAttributeName : self.textColor,
-                                 NSFontAttributeName : self.font,
-                                 NSParagraphStyleAttributeName : self.paragraphStyle
-                                 };
+    if (self.text == nil) {
+        return nil;
+    }
+    [self.linkRanges removeAllObjects];
+    NSMutableAttributedString * content = [[NSMutableAttributedString alloc] initWithString:self.text
+                                                                                 attributes:[self.config attributedStringAttributes]];
     
-    NSMutableAttributedString * content = [[NSMutableAttributedString alloc] initWithString:text
-                                                                                 attributes:attributes];
+    NSArray *patternResults = [[self getlabelAttributeStrings:self.text patterns:patterns] sortedArrayUsingComparator:^NSComparisonResult(YMLabelAttributeString *obj1, YMLabelAttributeString *obj2) {
+        return (obj1.range.location > obj2.range.location) ? NSOrderedAscending : NSOrderedDescending;
+    }];
     
-    for (NSString * emojiText in self.emojiTextMapper) {
-        NSRange range = [content.string rangeOfString: emojiText];
-        while (range.location != NSNotFound) {
-            [content replaceCharactersInRange:range withAttributedString:[self attachementAttributeString:self.emojiTextMapper[emojiText]]];
-            
-            range = [content.string rangeOfString: emojiText];
-        }
+    for (YMLabelAttributeString *ymStr in patternResults) {
+        [content replaceCharactersInRange:ymStr.range withAttributedString:ymStr.attributeString];
     }
     
-    for (NSString *hyperlinkText in self.hyperlinkMapper) {
-        NSRange range = [content.string rangeOfString:hyperlinkText];
-        [self.textTouchMapper setValue: self.hyperlinkMapper[hyperlinkText] forKey: NSStringFromRange(range)];
-        [content replaceCharactersInRange:range withAttributedString:[self linkString:hyperlinkText]];
-    }
-    
+    self.attributedText = content;
     return content;
 }
 
-- (NSAttributedString *)linkString:(NSString *)string
+- (NSArray *)getlabelAttributeStrings:(NSString *)text patterns:(NSArray *)patterns
 {
-    NSAttributedString *link = [[NSAttributedString alloc] initWithString:string
-                                                               attributes:@{NSUnderlineStyleAttributeName : @(NSUnderlineStyleSingle),
-                                                                            NSForegroundColorAttributeName : [UIColor blueColor],
-                                                                            NSParagraphStyleAttributeName : self.paragraphStyle,
-                                                                            }];
-    return link;
+    NSMutableArray *attrStrArr = [[NSMutableArray alloc] init];
+    
+    for (id <YMLabelTextPatternProtocol> pattern in patterns) {
+        [attrStrArr addObjectsFromArray:[self getAttributedStringsWithText:text pattern:pattern]];
+    }
+    
+    return attrStrArr;
 }
 
-- (NSAttributedString *)attachementAttributeString:(NSString *)imageName
+- (void)setText:(NSString *)text
+{
+    _text = text;
+}
+
+- (void)catchAttributesInIndex:(NSInteger)index
+                 completeBlock:(void (^)(NSDictionary *, NSRange))completeBlock
+{
+    if (self.attributedText == nil || self.attributedText.length - 1 < index) {
+        return;
+    }
+    
+    [self.attributedText enumerateAttributesInRange:NSMakeRange(0, self.attributedText.length)
+                                            options:NSAttributedStringEnumerationReverse
+                                         usingBlock:^(NSDictionary *attributes, NSRange range, BOOL * _Nonnull stop) {
+                                             if (NSLocationInRange(index, range)) {
+                                                 completeBlock(attributes,range);
+                                                 *stop = YES;
+                                             }
+                                         }];
+    
+}
+
+- (NSArray *) getAttributedStringsWithText:(NSString *)text pattern:(id<YMLabelTextPatternProtocol>)pattern
+{
+    
+    NSRegularExpression *rex = [NSRegularExpression regularExpressionWithPattern:[pattern regex]
+                                                                         options:NSRegularExpressionCaseInsensitive
+                                                                           error:nil];
+    NSArray *matchResults = [rex matchesResults:text];
+    NSMutableArray *rexFilterResult = [[NSMutableArray alloc] init];
+    for (NSTextCheckingResult *result in matchResults) {
+        YMLabelAttributeString *filter = [[YMLabelAttributeString alloc] init];
+        filter.range = result.range;
+        filter.isAttachement = [pattern isAttachement];
+        NSString *regexResult = [text substringWithRange:filter.range];
+        if (filter.isAttachement) {
+            filter.attributeString = [self attachementAttributeString:[pattern parserShowOrResourceString:regexResult] attributes:[pattern parserAttributes:regexResult]];
+        } else {
+            filter.attributeString = [self attributedTextString:[pattern parserShowOrResourceString:regexResult] attributes:[pattern parserAttributes:regexResult]];
+        }
+        [rexFilterResult addObject:filter];
+    }
+    return rexFilterResult;
+}
+
+- (NSAttributedString *)attachementAttributeString:(NSString *)imageName attributes:(NSDictionary *)attributes
 {
     NSTextAttachment *attachement = [[NSTextAttachment alloc] init];
     attachement.image = [UIImage imageNamed:imageName];
-    CTRunDelegateCallbacks imageCallbacks;
-    imageCallbacks.version = kCTRunDelegateVersion1;
-    imageCallbacks.dealloc = RunDelegateDeallocCallback;
-    imageCallbacks.getWidth = RunDelegateGetWidthCallback;
-    imageCallbacks.getAscent = RunDelegateGetAscentCallback;
-    imageCallbacks.getDescent = RunDelegateGetDescentCallback;
-    CTRunDelegateRef runDelegate = CTRunDelegateCreate(&imageCallbacks, (__bridge void *)attachement);
-    //插入空白表情占位符
-    NSDictionary *attributes = @{(NSString *)kCTRunDelegateAttributeName : (__bridge id)runDelegate,
-                                 @"NSAttachement" : attachement,
-                                 NSParagraphStyleAttributeName : self.paragraphStyle,
-                                 };
-    
-    NSMutableAttributedString * attrString = [[NSMutableAttributedString alloc] initWithString: @" " attributes:attributes];
-    
-    CFRelease(runDelegate);
+    unichar ch = 0xFFFC;
+    NSMutableDictionary *mult_attr = [[NSMutableDictionary alloc] initWithDictionary:[self.config attachementRenderAttributes:attachement]];
+    if (attributes) {
+        [mult_attr addEntriesFromDictionary:attributes];
+    }
+    NSMutableAttributedString * attrString = [[NSMutableAttributedString alloc]
+                                              initWithString:[NSString stringWithCharacters:&ch length:1]
+                                              attributes:mult_attr];
     
     return attrString;
 }
+
+- (NSAttributedString *)attributedTextString:(NSString *)string attributes:(NSDictionary *)attributes
+{
+    NSMutableDictionary *mult_attr = [[NSMutableDictionary alloc] initWithDictionary:[self.config linkAttributes]];
+    if (attributes) {
+        [mult_attr addEntriesFromDictionary:attributes];
+    }
+    
+    NSAttributedString *link = [[NSAttributedString alloc] initWithString:string
+                                                               attributes:mult_attr];
+    return link;
+}
+
 
 @end

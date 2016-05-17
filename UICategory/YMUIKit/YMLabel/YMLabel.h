@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YMLabelTextPatternProtocol.h"
 
 @class YMLabel;
 
@@ -14,7 +15,7 @@
 
 - (void) ymLabel:(YMLabel *)label shouldInteractWithStringAttributes:(NSDictionary *)attributes inRange:(NSRange)characterRange;
 
-- (void) ymLabel:(YMLabel *)label shouldInteractWithTextAttachment:(NSTextAttachment *)textAttachment inRange:(NSRange)characterRange;
+- (void) ymLabel:(YMLabel *)label shouldInteractWithTextAttachment:(NSTextAttachment *)textAttachment inRange:(NSRange)characterRange attributes:(NSDictionary *)attributes;
 
 @end
 
@@ -26,7 +27,7 @@
 
 @property (nonatomic, assign) CGFloat               lineFragmentPadding;
 
-@property (nonatomic, assign) NSLineBreakMode       lineBreakMode;    // default is NSLineBreakByTruncatingTail. used for single and multiple lines of text
+@property (nonatomic, assign) NSLineBreakMode       lineBreakMode;
 
 @property (nonatomic, strong) UIColor               *textColor;
 
@@ -46,13 +47,6 @@
 
 @property (nonatomic, assign) NSInteger             maxNumberOflines;
 
-/*!
- *  @brief 文本-超链接映射
- */
-@property (nonatomic, strong) NSDictionary * hyperlinkMapper;
-/*!
- *  @brief 文本-表情映射
- */
-@property (nonatomic, strong) NSDictionary * emojiTextMapper;
+- (void)addPattern:(id<YMLabelTextPatternProtocol>)pattern;
 
 @end

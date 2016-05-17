@@ -51,17 +51,14 @@
 {
     textParser = [[YMLabelTextParser alloc] init];
     attachementsRender = [[YMAttachementsRender alloc] init];
-    
-    self.font = [UIFont systemFontOfSize:15.f];
-    self.textColor = [UIColor blackColor];
-    self.lineBreakMode = NSLineBreakByTruncatingTail;
 }
 
 #pragma mark Property Set & Get Method
 - (void) setText:(NSString *)text
 {
     _text = text;
-    NSAttributedString *attrStr = [textParser parserText:text];
+    textParser.text = text;
+    NSAttributedString *attrStr = [textParser parserText];
     [self setAttributedText:attrStr];
 }
 
@@ -73,41 +70,41 @@
 
 - (void) setFont:(UIFont *)font
 {
-    textParser.font = font;
+    textParser.config.font = font;
 }
 
 - (UIFont *)font
 {
-    return textParser.font;
+    return textParser.config.font;
 }
 
 - (void)setTextColor:(UIColor *)textColor
 {
-    textParser.textColor = textColor;
+    textParser.config.textColor = textColor;
 }
 
 - (UIColor *)textColor
 {
-    return textParser.textColor;
+    return textParser.config.textColor;
 }
 
 - (void)setLineBreakModel:(NSLineBreakMode)lineBreakModel
 {
-    [textParser.paragraphStyle setLineBreakMode:lineBreakModel];
+    [textParser.config.paragraphStyle setLineBreakMode:lineBreakModel];
 }
 
 - (NSLineBreakMode)lineBreakModel {
-    return textParser.paragraphStyle.lineBreakMode;
+    return textParser.config.paragraphStyle.lineBreakMode;
 }
 
 - (void)setLineFragmentPadding:(CGFloat)lineFragmentPadding
 {
-    [textParser.paragraphStyle setLineSpacing:lineFragmentPadding];;
+    [textParser.config.paragraphStyle setLineSpacing:lineFragmentPadding];;
 }
 
 - (CGFloat)lineFragmentPadding
 {
-    return textParser.paragraphStyle.lineSpacing;
+    return textParser.config.paragraphStyle.lineSpacing;
 }
 
 - (void)setTextContainerInsets:(UIEdgeInsets)textContainerInsets
@@ -127,14 +124,20 @@
     return self.layer.cornerRadius;
 }
 
-- (void) setEmojiTextMapper:(NSDictionary *)emojiTextMapper
-{
-    [textParser setEmojiTextMapper:emojiTextMapper];
-}
+//- (void) setEmojiTextMapper:(NSDictionary *)emojiTextMapper
+//{
+//    [textParser setEmojiTextMapper:emojiTextMapper];
+//}
+//
+//- (void) setHyperlinkMapper:(NSDictionary *)hyperlinkMapper
+//{
+//    [textParser setHyperlinkMapper:hyperlinkMapper];
+//}
 
-- (void) setHyperlinkMapper:(NSDictionary *)hyperlinkMapper
+#pragma mark -
+- (void)addPattern:(id<YMLabelTextPatternProtocol>)pattern
 {
-    [textParser setHyperlinkMapper:hyperlinkMapper];
+    [textParser addParserPattern:pattern];
 }
 
 #pragma --DrawRect Method
@@ -164,7 +167,6 @@
     CTFrameDraw(_frame, ctx);
     //遍历文本行以及CTRunRef，将表情文本对应的表情图片绘制到图形上下文
     
-    
     [attachementsRender renderAttachementsToContext:ctx toLabel:self frame:frame];
     
     CFRelease(paths);
@@ -172,83 +174,88 @@
     CFRelease(framesetter);
 }
 
-//- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-//{
-//    CGPoint touchPoint = [touches.anyObject locationInView: self];
-//    CFArrayRef lines = CTFrameGetLines(_frame);
-//    CGPoint origins[CFArrayGetCount(lines)];
-//    
-//    for (int idx = 0; idx < CFArrayGetCount(lines); idx++) {
-//        CGPoint origin = origins[idx];
-//        CGPathRef path = CTFrameGetPath(_frame);
-//        CGRect rect = CGPathGetBoundingBox(path);
-//        
-//        //将坐标点更改为左上角坐标系原点的坐标
-//        CGFloat y = rect.origin.y + rect.size.height - origin.y;
-//        
-////        if (touchPoint.y == origin.x && touchPoint.x == range.location && index <= range.location + range.length) {
-////            NSLog(@"点击了图片链接：%@", _textTouchMapper[textRange]);
-////            break;
-////        }
-//    }
-//}
-
 - (void)touchesEnded: (NSSet*)touches withEvent: (UIEvent *)event
 {
     CGPoint touchPoint = [touches.anyObject locationInView: self];
-//    CFArrayRef lines = CTFrameGetLines(_frame);
-//    CGPoint origins[CFArrayGetCount(lines)];
-//    CTFrameGetLineOrigins(_frame, CFRangeMake(0, 0), origins);
-//    CTLineRef line = NULL;
-//    CGPoint lineOrigin = CGPointZero;
-//    //查找点击坐标所在的文本行
-//    for (int idx = 0; idx < CFArrayGetCount(lines); idx++) {
-//        CGPoint origin = origins[idx];
-//        CGPathRef path = CTFrameGetPath(_frame);
-//        CGRect rect = CGPathGetBoundingBox(path);
-//        //转换点击坐标
-//        CGFloat y = rect.origin.y + rect.size.height - origin.y;
-//        if (touchPoint.y = origin.x && touchPoint.x = range.location && index <= range.location + range.length) {
-////            if ([_delegate respondsToSelector: @selector(textView:didSelectedHyperlink:)]) {
-////                [_delegate textView: self didSelectedHyperlink: self.textTouchMapper[textRange]];
-////            }
-//            NSLog(@"url tap");
-//            return;
-//        }
-//    }
     
-    //判断是否点击表情
-    NSTextAttachment *attachement = [attachementsRender getAttachementWithPoint:touchPoint];
-    if (attachement && self.delegate != nil && [self.delegate respondsToSelector:@selector(ymLabel:shouldInteractWithTextAttachment:inRange:)]) {
-        [self.delegate ymLabel:self shouldInteractWithTextAttachment:attachement inRange:NSMakeRange(0, 0)];
+    if ([self filterAttachemtWithPoint:touchPoint]) {
         return;
     }
     
-    CFArrayRef lines = CTFrameGetLines(_frame);
-    CGPoint origins[CFArrayGetCount(lines)];
-    CTFrameGetLineOrigins(_frame, CFRangeMake(0, 0), origins);
-//    CTLineRef line = NULL;
-//    CGPoint lineOrigin = CGPointZero;
-    
-    //查找点击坐标所在的文本行
-    for (int idx = 0; idx < CFArrayGetCount(lines); idx++) {
-        CGPoint origin = origins[idx];
-        CGPathRef path = CTFrameGetPath(_frame);
-        CGRect rect = CGPathGetBoundingBox(path);
-        //转换点击坐标
+    [self filterTouchAttributedText:touchPoint frame:_frame];
+}
 
-        
-        CGFloat y = rect.origin.y + rect.size.height - origin.y;
-//        if (touchPoint.y = origin.x && touchPoint.x = range.location && index <= range.location + range.length) {
-////            if ([_delegate respondsToSelector: @selector(textView:didSelectedHyperlink:)]) {
-////                [_delegate textView: self didSelectedHyperlink: self.textTouchMapper[textRange]];
-////            }
-//            if (self.delegate != nil && [self.delegate respondsToSelector:@selector(ymLabel:shouldInteractWithStringAttributes:inRange:)]) {
-//                [self.delegate ymLabel:self shouldInteractWithStringAttributes:nil inRange:NSMakeRange(0, 0)];
-//            }
-//            break;
-//        }
+- (BOOL)filterAttachemtWithPoint:(CGPoint)point
+{
+    //判断是否点击表情
+    NSTextAttachment *attachement = [attachementsRender getAttachementWithPoint:point];
+    if (!attachement) {
+        return NO;
     }
+    
+    if (self.delegate != nil && [self.delegate respondsToSelector:@selector(ymLabel:shouldInteractWithTextAttachment:inRange:attributes:)]) {
+        [self.delegate ymLabel:self shouldInteractWithTextAttachment:attachement inRange:NSMakeRange(0, 0) attributes:nil];
+    }
+    
+    return YES;
+}
+
+- (void)filterTouchAttributedText:(CGPoint)point frame:(CTFrameRef)frame {
+    CTFrameRef textFrame = frame;
+    CFArrayRef lines = CTFrameGetLines(textFrame);
+    if (!lines) return;
+    
+    CFIndex count = CFArrayGetCount(lines);
+    
+    // 获得每一行的origin坐标
+    CGPoint origins[count];
+    CTFrameGetLineOrigins(textFrame, CFRangeMake(0, 0), origins);
+    
+    // 翻转坐标系
+    CGAffineTransform transform = CGAffineTransformMakeTranslation(0, self.bounds.size.height);
+    transform = CGAffineTransformScale(transform, 1.0f, -1.0f);
+    
+    for (int i = 0; i < count; i++) {
+        CGPoint linePoint = origins[i];
+        linePoint.x = linePoint.x + self.textContainerInsets.left;
+        
+        CTLineRef line = CFArrayGetValueAtIndex(lines, i);
+        // 获得每一行的rect信息
+        CGRect flippedRect = [self getLineBounds:line point:linePoint];
+        CGRect rect = CGRectApplyAffineTransform(flippedRect, transform);
+        
+        if (CGRectContainsPoint(rect, point)) {
+            // 将点击的坐标转化为相对于当前行的坐标
+            CGPoint relativePoint = CGPointMake(point.x - CGRectGetMinX(rect) - self.textContainerInsets.left, CGRectGetMinY(rect) + self.textContainerInsets.top);
+            // 获取当前点击坐标对应的字符串偏移量
+            CFIndex idx = CTLineGetStringIndexForPosition(line, relativePoint);
+            // 判断偏移量是否在链接列表中
+            [self catchAttributesInIndex:idx];
+            break;
+        }
+    }
+}
+
+- (CGRect)getLineBounds:(CTLineRef)line
+                  point:(CGPoint)point {
+    CGFloat ascent = 0.0f, descent = 0.0f, leading = 0.0f;
+    CGFloat width = CTLineGetTypographicBounds(line, &ascent, &descent, &leading);
+    CGFloat height = ascent + descent;
+    return CGRectMake(point.x, point.y, width, height);
+}
+
+- (void)catchAttributesInIndex:(NSInteger)index
+{
+    __weak typeof(self) weakSelf = self;
+    [textParser catchAttributesInIndex:index
+                         completeBlock:^(NSDictionary *attributes, NSRange range) {
+                             __strong typeof(weakSelf) strongSelf = weakSelf;
+        if ([strongSelf.delegate respondsToSelector:@selector(ymLabel:shouldInteractWithStringAttributes:
+                                                              inRange:)]) {
+            [strongSelf.delegate ymLabel:strongSelf shouldInteractWithStringAttributes:attributes
+                                 inRange:range];
+        }
+    }];
 }
 
 @end

@@ -46,7 +46,7 @@
             runRect = CGRectMake(lineOrigin.x + CTLineGetOffsetForStringIndex(line, CTRunGetStringRange(run).location, NULL), lineOrigin.y - runDescent, runRect.size.width, runAscent + runDescent);
             //查找表情文本替换表情视图
             NSDictionary * attributes = (NSDictionary *)CTRunGetAttributes(run);
-            NSTextAttachment *attachement = attributes[@"NSAttachement"];
+            NSTextAttachment *attachement = attributes[NSStringFromClass(NSTextAttachment.class)];
             if (attachement) {
                 CGRect imageDrawRect;
                 CGFloat imageSize = ceil(runRect.size.height);
