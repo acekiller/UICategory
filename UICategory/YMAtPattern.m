@@ -12,7 +12,7 @@
 
 - (instancetype) init
 {
-    self = [super initWithRegex:@"(\\[@[a-zA-Z0-9\u4E00-\u9FA5_]{0,}\\])" isAttachement:NO];
+    self = [super initWithRegex:@"(\\[[a-zA-Z0-9\u4E00-\u9FA5_]{0,}\\])" isAttachement:YES];
     if (self) {
         //
     }

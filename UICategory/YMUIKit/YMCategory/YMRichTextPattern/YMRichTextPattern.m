@@ -118,6 +118,8 @@
 
 - (NSAttributedString *)richTextParamsParserString:(YMPatternResults *)result
 {
+    NSMutableDictionary *attributes = [[result params] mutableCopy];
+    [attributes setObject:result.result forKey:NSLinkAttributeName];
     return [[NSAttributedString alloc] initWithString:[result showString]
                                                       attributes:[result params]];
 }

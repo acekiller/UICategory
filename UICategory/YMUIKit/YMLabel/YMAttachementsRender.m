@@ -57,12 +57,21 @@
                 imageDrawRect.origin.x = runRect.origin.x + lineOrigin.x + label.textContainerInsets.left;
                 imageDrawRect.origin.y = lineOrigin.y + label.textContainerInsets.top;
                 CGContextDrawImage(context, imageDrawRect, attachement.image.CGImage);
+//                [self delayShowRect:imageDrawRect context:context image:attachement.image];
                 
                 imageDrawRect.origin.y = label.frame.size.height - imageDrawRect.origin.y - imageDrawRect.size.height;
                 self.renderAttachmentMaps[NSStringFromCGRect(imageDrawRect)] = attachement;
             }
         }
     }
+}
+
+-(void)delayShowRect:(CGRect)imageDrawRect context:(CGContextRef)ctx image:(UIImage *)image
+{
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 3000.f), dispatch_get_main_queue(), ^{
+        CGContextDrawImage(ctx, imageDrawRect, image.CGImage);
+    });
 }
 
 - (NSTextAttachment *)getAttachementWithPoint:(CGPoint)point

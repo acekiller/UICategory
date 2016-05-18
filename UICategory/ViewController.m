@@ -26,9 +26,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    [self testCustomerLabel];
+//    [self testCustomerLabel];
     
-//    [self testRichTextLabel];
+    [self testRichTextLabel];
     
 //    [self testRichTextView];
     
@@ -51,7 +51,7 @@
     label.lineFragmentPadding = 5.f;
     label.font = [UIFont systemFontOfSize:15.f];
     
-    label.text = @"[@百度]很久很久以前[emoji_01]，在一个群里，生活着[@腾讯]这样的居民，后来，一个[emoji_01]叫做[@谷歌]的人入侵了这个村庄，他的同伙[@脸书]让整个群里变得淫荡无比。从此[emoji_01]，迎来了污妖王的时代。污妖王，我当定了！[@百度]很久很久以前[emoji_01]，在一个群里，生活着[@腾讯]这样的居民，后来，一个[emoji_01]叫做[@谷歌]的人入侵了这个村庄，他的同伙[@脸书]让整个群里变得淫荡无比。从此[emoji_01]，迎来了污妖王的时代。污妖王，我当定了[@百度]很久很久以前[emoji_01]，在一个群里，生活着[@腾讯]这样的居民，后来，一个[emoji_01]叫做[@谷歌]的人入侵了这个村庄，他的同伙[@脸书]让整个群里变得淫荡无比。从此[emoji_01]，迎来了污妖王的时代。污妖王，我当定了[@百度]很久很久以前[emoji_01]，在一个群里，生活着[@腾讯]这样的居民，后来，一个[emoji_01]叫做[@谷歌]的人入侵了这个村庄，他的同伙[@脸书]让整个群里变得淫荡无比。从此[emoji_01]，迎来了污妖王的时代。污妖王，我当定了[@百度]很久很久以前[emoji_01]，在一个群里，生活着[@腾讯]这样的居民，后来，一个[emoji_01]叫做[@谷歌]的人入侵了这个村庄，他的同伙[@脸书]让整个群里变得淫荡无比。从此[emoji_01]，迎来了污妖王的时代。污妖王，我当定了[@百度]很久很久以前[emoji_01]，在一个群里，生活着[@腾讯]这样的居民，后来，一个[emoji_01]叫做[@谷歌]的人入侵了这个村庄，他的同伙[@脸书]让整个群里变得淫荡无比。从此[emoji_01]，迎来了污妖王的时代。污妖王，我当定了[@百度]很久很久以前[emoji_01]，在一个群里，生活着[@腾讯]这样的居民，后来，一个[emoji_01]叫做[@谷歌]的人入侵了这个村庄，他的同伙[@脸书]让整个群里变得淫荡无比。从此[emoji_01]，迎来了污妖王的时代。污妖王，我当定了";
+    label.text = @"[@百度]很久很久以前[emoji_01]，在一个群里，生活着[@腾讯]这样的居民，后来，一个[emoji_01]叫做[@谷歌]的人入侵了这个村庄，他的同伙[@脸书]让整个群里变得淫荡无比。从此[emoji_01]，迎来了污妖王的时代。污妖王，我当定了！";
     
     label.textContainerInsets = UIEdgeInsetsMake(10.f, 10.f, 10.f, 10.f);
     [label sizeToFit];
@@ -60,6 +60,7 @@
 - (void) testRichTextLabel
 {
     UILabel *t = [[UILabel alloc] initWithFrame:CGRectMake(10.f, 20.f, self.view.frame.size.width - 20.f, self.view.frame.size.height - 20.f)];
+    [t setUserInteractionEnabled:YES];
     [self.view addSubview:t];
 //    t.translatesAutoresizingMaskIntoConstraints = NO;
     
@@ -120,7 +121,7 @@
     [t addPattern:[[YMTelPattern alloc] init]];
     [t addPattern:[[YMURLPattern alloc] init]];
     
-    t.text = @"测试[emoji_00],欢迎。[emoji_01],测试内容<image name:emoji_02 width:100 height:100>,哈哈[emoji_03],难啊。你猜猜，我猜猜，大家都不知道，这是怎么回事儿。那该咋办呢？3.2遗留：一个孩子的家长可以相互看到手机号。028-64566560。0817-8347866，0828-84343232。http://baidu.com/ats/user?acc=1iafas&txt=aadf%2E 好吗?";
+    t.text = @"测试[emoji_00],欢迎。[emoji_01],测试内容<image name:emoji_02 width:150 height:150>,哈哈[emoji_03],难啊。你猜猜，我猜猜，大家都不知道，这是怎么回事儿。那该咋办呢？3.2遗留：一个孩子的家长可以相互看到手机号。028-64566560。0817-8347866，0828-84343232。http://baidu.com/ats/user?acc=1iafas&txt=aadf%2E 好吗?";
     t.textContentEdgeInsets = UIEdgeInsetsMake(ediSize, ediSize, ediSize, ediSize);
     [t setUserInteractionEnabled:YES];
     [t sizeToFit];
@@ -136,7 +137,7 @@
     [rt addPattern:[[YMURLPattern alloc] init]];
 //    rt.text = @"学习";
     [self.view addSubview:rt];
-    rt.text = @"测试[emoji_00],欢迎。[emoji_01],测试内容<image name:emoji_02 width:100 height:100>,哈哈[emoji_03],难啊。你猜猜，我猜猜，大家都不知道，这是怎么回事儿。那该咋办呢？3.2遗留：一个孩子的家长可以相互看到手机号。028-64566560。0817-8347866，0828-84343232。http://baidu.com/ats/user?acc=1iafas&txt=aadf%2E 好吗?";
+    rt.text = @"测试[emoji_00],欢迎。[emoji_01],测试内容<image name:emoji_02 width:200 height:200>,哈哈[emoji_03],难啊。你猜猜，我猜猜，大家都不知道，这是怎么回事儿。那该咋办呢？3.2遗留：一个孩子的家长可以相互看到手机号。028-64566560。0817-8347866，0828-84343232。http://baidu.com/ats/user?acc=1iafas&txt=aadf%2E 好吗?";
     
     [rt addImage:[UIImage imageNamed:@"emoj_s_pressed"]];
     
