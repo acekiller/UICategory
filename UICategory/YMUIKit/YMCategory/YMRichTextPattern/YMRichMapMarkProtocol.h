@@ -9,13 +9,32 @@
 #import <Foundation/Foundation.h>
 #import "YMPatternResults.h"
 #import "YMRTHead.h"
-#import <UIKit/NSTextAttachment.h>
+#import <UIKit/UIKit.h>
+
+@protocol YMRichTextConfigProtocol;
 
 @protocol YMRichMapMarkProtocol <NSObject>
 
 @property (nonatomic, strong) NSString *regular;
 
 @property (nonatomic, assign) YMRichPatternType patternType;
+
+@property (nonatomic, assign) id <YMRichTextConfigProtocol> delegate;
+
+@property (nonatomic, strong) NSString *directory;
+
+@property (nonatomic, strong) UIFont *font;
+
+@property (nonatomic, copy) void(^tapHandler)(NSDictionary *attributes);
+
+- (instancetype) initWithFont:(UIFont *)font
+                     delegate:(id <YMRichTextConfigProtocol>)delegate;
+
+- (instancetype) initWithFont:(UIFont *)font;
+
+- (instancetype) initWithDelegate:(id <YMRichTextConfigProtocol>)delegate;
+
+- (instancetype) initWithResourceDiretory:(NSString *)directory font:(UIFont *)font delegate:(id<YMRichTextConfigProtocol>)delegate;
 
 /**
  *  用于从匹配到的数据中解析NSAttributedString对象的参数。
@@ -32,15 +51,18 @@
 - (YMPatternResults *)patternResultStringFromString:(NSString *)string
                                         checkResult:(NSTextCheckingResult *)checkResult;
 
+- (YMPatternResults *)patternResultStringFromString:(NSString *)string
+                                        checkResult:(NSTextCheckingResult *)checkResult
+                                               font:(UIFont *)font;
+
 #pragma mark --Attachement Method
 /**
  *  YMRichPatternWithAttachement    类型数据解析类
  */
 - (Class)attachementClass;
 
-/**
- *  YMRichTextPatternWithAttribute 类型数据解析参数
- */
-- (Class)styleParamsParserClass;
+@end
+
+@protocol YMRichTextConfigProtocol <NSObject>
 
 @end

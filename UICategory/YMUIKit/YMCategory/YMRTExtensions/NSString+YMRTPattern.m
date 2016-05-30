@@ -40,6 +40,11 @@ static NSMutableArray *patternModels;
 
 - (NSArray <YMPatternResults *>* )patternResultWithPattern:(id<YMRichMapMarkProtocol>)pattern
 {
+    return [self patternResultWithPattern:pattern font:nil];
+}
+
+- (NSArray <YMPatternResults *>* )patternResultWithPattern:(id<YMRichMapMarkProtocol>)pattern font:(UIFont *)font
+{
     NSRegularExpression *rex = [NSRegularExpression regularExpressionWithPattern:[pattern regular]
                                                                          options:NSRegularExpressionCaseInsensitive
                                                                            error:nil];
@@ -47,10 +52,24 @@ static NSMutableArray *patternModels;
     NSMutableArray *rexFilterResult = [[NSMutableArray alloc] init];
     for (NSTextCheckingResult *result in matchResults) {
         YMPatternResults *filter = [pattern patternResultStringFromString:self
-                                                              checkResult:result];
+                                                              checkResult:result
+                                                                     font:font];
         [rexFilterResult addObject:filter];
     }
     return rexFilterResult;
+}
+
+- (NSArray <YMPatternResults *>* )patternResultWithPatterns:(NSArray <id<YMRichMapMarkProtocol>> *)patterns {
+    return [self patternResultWithPatterns:patterns font:nil];
+}
+
+- (NSArray <YMPatternResults *>* )patternResultWithPatterns:(NSArray <id<YMRichMapMarkProtocol>> *)patterns font:(UIFont *)font {
+    NSMutableArray *patternResults = [[NSMutableArray alloc] init];
+    for (id<YMRichMapMarkProtocol> pattern in patterns) {
+        [patternResults addObjectsFromArray:[self patternResultWithPattern:pattern font:font]];
+    }
+    
+    return patternResults;
 }
 
 - (NSMutableAttributedString *)mutableAttributedStringWithAllRegisterPattern
@@ -60,20 +79,27 @@ static NSMutableArray *patternModels;
 
 - (NSMutableAttributedString *)mutableAttributedStringWithPattens:(NSArray *)richTextMarkMaps
 {
+    return [self mutableAttributedStringWithPattens:richTextMarkMaps font:nil];
+}
+
+- (NSMutableAttributedString *)mutableAttributedStringWithPattens:(NSArray *)richTextMarkMaps font:(UIFont *)font
+{
     NSMutableAttributedString *attr = [[NSMutableAttributedString alloc] initWithString:self];
     
-    for (id<YMRichMapMarkProtocol> pattern in richTextMarkMaps) {
-        NSMutableString *str = [[NSMutableString alloc] initWithString:attr.string];
-        NSArray *patternResults = [str patternResultWithPattern:pattern];
-        for (NSInteger i = [patternResults count] - 1; i >= 0; i--) {
-            YMPatternResults *result = patternResults[i];
-            NSAttributedString *attrStr = result.attributeString;
-            if (!attrStr) {
-                continue;
-            }
-            [attr replaceCharactersInRange:[result range]
-                      withAttributedString:result.attributeString];
+    NSMutableString *str = [[NSMutableString alloc] initWithString:self];
+    
+    NSArray *patternResults = [[str patternResultWithPatterns:richTextMarkMaps font:font] sortedArrayUsingComparator:^NSComparisonResult(YMPatternResults *obj1, YMPatternResults *obj2) {
+        return (obj1.range.location < obj2.range.location) ? NSOrderedAscending : NSOrderedDescending;
+    }];
+    
+    for (NSInteger i = [patternResults count] - 1; i >= 0; i--) {
+        YMPatternResults *result = patternResults[i];
+        NSAttributedString *attrStr = result.attributeString;
+        if (!attrStr) {
+            continue;
         }
+        [attr replaceCharactersInRange:[result range]
+                  withAttributedString:result.attributeString];
     }
     return attr;
 }

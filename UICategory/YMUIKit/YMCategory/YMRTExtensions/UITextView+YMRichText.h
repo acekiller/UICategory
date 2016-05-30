@@ -1,14 +1,14 @@
 //
-//  UITextView+RichText.h
+//  UITextView+YMRichText.h
 //  UICategory
 //
 //  Created by fengxijun on 5/11/16.
 //  Copyright © 2016 goappbox. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "YMRichMapMarkProtocol.h"
 
-@interface UITextView (RichText)
+@interface UITextView (YMRichText)
 
 - (void)insertAttachementWithPath:(NSString *)filepath range:(NSRange)range;
 
@@ -21,5 +21,7 @@
 - (void)addImage:(UIImage *)image;
 
 - (void)addSeprateLine;
+
+- (void)addPattern:(id<YMRichMapMarkProtocol>)pattern;
 
 @end
