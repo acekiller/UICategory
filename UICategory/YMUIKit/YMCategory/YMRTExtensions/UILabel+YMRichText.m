@@ -17,7 +17,7 @@
 {
     static dispatch_once_t swizzing_rich_text_once;
     dispatch_once(&swizzing_rich_text_once, ^{
-        swizzleSelector(self, @selector(sizeThatFits:), @selector(sizzing_sizeThatFits:));
+//        swizzleSelector(self, @selector(sizeThatFits:), @selector(sizzing_sizeThatFits:));
         swizzleSelector(self, @selector(drawTextInRect:), @selector(swizzing_drawTextInRect:));
         swizzleSelector(self, @selector(setText:), @selector(swizzing_setText:));
         swizzleSelector(self, @selector(setAttributedText:), @selector(swizzing_setAttributedText:));
@@ -40,15 +40,6 @@
 {
     
     return [self swizzing_setAttributedText:[self getAttributeWithString]];
-}
-
-- (CGSize)sizzing_sizeThatFits:(CGSize)size
-{
-    size.width = size.width - (self.textContentEdgeInsets.left + self.textContentEdgeInsets.right);
-    CGSize fixedSize = [self sizzing_sizeThatFits:size];
-    fixedSize.height += (self.textContentEdgeInsets.top + self.textContentEdgeInsets.bottom);
-    fixedSize.width += (self.textContentEdgeInsets.left + self.textContentEdgeInsets.right);
-    return fixedSize;
 }
 
 - (NSMutableAttributedString *)getAttributeWithString
